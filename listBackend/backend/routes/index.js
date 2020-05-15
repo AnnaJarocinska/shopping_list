@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var nodemailer = require('nodemailer');
+const express = require('express');
+const router = express.Router();
+const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
-  // service: 'gmail',
   auth: {
     user: 'shoppinglist55555',
     pass: 'Ozekishoppinglist5'
@@ -25,14 +24,29 @@ transporter.verify((error, success) => {
 
 
 router.post('/send', (req, res, next) => {
-  var name = req.body.name
-  var content = `name: ${name}` 
+  const fruits = req.body.fruits
+  const vegetables = req.body.vegetables
+  const dairy = req.body.dairy
+  const meatAndFish = req.body.meatAndFish
+  const dryGoods = req.body.dryGoods
+  const householdItems = req.body.householdItems
+  const others = req.body.others
+
+  const content = `
+  Fruits: ${fruits}
+  Vegetables: ${vegetables}
+  Dairy: ${dairy}
+  Meat and fish: ${meatAndFish}
+  Dry goods: ${dryGoods}
+  Household items: ${householdItems}
+  Others: ${others}
+  `
 
 
-  var mail = {
+  const mail = {
     from: 'shoppinglist55555@gmail.com',
     to: "anna.jarocinska5@gmail.com",
-    subject: 'New Message from Contact Form',
+    subject: 'Shopping list',
     text: content
   }
 
