@@ -22,7 +22,6 @@ transporter.verify((error, success) => {
   }
 });
 
-
 router.post('/send', (req, res, next) => {
   const fruits = req.body.fruits
   const vegetables = req.body.vegetables
@@ -31,8 +30,11 @@ router.post('/send', (req, res, next) => {
   const dryGoods = req.body.dryGoods
   const householdItems = req.body.householdItems
   const others = req.body.others
+  const email = req.body.email
+  const message = req.body.message
 
   const content = `
+  SHOPPING LIST:
   Fruits: ${fruits}
   Vegetables: ${vegetables}
   Dairy: ${dairy}
@@ -40,12 +42,12 @@ router.post('/send', (req, res, next) => {
   Dry goods: ${dryGoods}
   Household items: ${householdItems}
   Others: ${others}
+  Message: ${message}
   `
-
 
   const mail = {
     from: 'shoppinglist55555@gmail.com',
-    to: "anna.jarocinska5@gmail.com",
+    to: `${email}`,
     subject: 'Shopping list',
     text: content
   }
@@ -62,6 +64,5 @@ router.post('/send', (req, res, next) => {
     }
   })
 })
-
 
 module.exports = router;
