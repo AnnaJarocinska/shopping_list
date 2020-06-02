@@ -4,16 +4,11 @@ const INITIAL_STATE = {
 
   fruitList: ['apples', 'bananas', 'lemon'],
 
-  vegetableList:
-  //  []
-  ['carrot', 'tomato']
-  ,
+  vegetableList:['carrot', 'tomato'],
 
   dairyList: ['milk', 'eggs'],
 
-  meatAndFishList:[]
-  //  ['chicken', 'sausages']
-   ,
+  meatAndFishList: ['chicken', 'sausages'],
 
   dryGoodsList: ['flour', 'rice'],
 

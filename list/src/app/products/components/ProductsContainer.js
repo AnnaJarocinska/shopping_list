@@ -2,70 +2,38 @@ import React from 'react';
 import { connect } from 'react-redux';
 import actions from '../duck/actions';
 
-
-
 const ProductsCotainer = (props) => {
 
-    // const { fruitList, vegetableList, dairyList, meatAndFishList,
-    //      dryGoodsList, householdItemsList, othersList } = props.products;
+    const handleDeleteClickProduct = (e) => {
+        for (let list of Object.keys(props.products)) {
+        let actionItem = e.target.getAttribute('name')
+        props.products[list].forEach(element => { 
+            element.includes(actionItem) && props.deleteProduct(element, e.target.id)})
+    }}
 
-    const handleDeleteClickFruit = (e) => {
-        props.deleteProduct(props.products.fruitList[e.target.id], e.target.id)
-    };
-
-    // const handleDeleteClickVegetable = (e) => {
-    //     props.deleteProduct(vegetableList[e.target.id], e.target.id)
-    // };
-
-    // const handleDeleteClickDairy = (e) => {
-    //     props.deleteProduct(dairyList[e.target.id], e.target.id)
-    // };
-
-    // const handleDeleteClickMeatAndFish = (e) => {
-    //     props.deleteProduct(meatAndFishList[e.target.id], e.target.id)
-    // };
-
-    // const handleDeleteClickDryGoods = (e) => {
-    //     props.deleteProduct(dryGoodsList[e.target.id], e.target.id)
-    // };
-
-    // const handleDeleteClickHouseholdItems = (e) => {
-    //     props.deleteProduct(householdItemsList[e.target.id], e.target.id)
-    // };
-
-    // const handleDeleteClickOthers = (e) => {
-    //     props.deleteProduct(othersList[e.target.id], e.target.id)
-    // };
-
-    let shoppingList = [];
-    for (let [key, value] of Object.entries(props.products)) {
-        
-        props.products[key].length !== 0 
-        ?
-
-        // for (let i = 0; i < Object.keys(props.products).length; i++) {
-            shoppingList.push(<div>
+    const shoppingList = [];
+    for (let [key, value] of Object.entries(props.products)){
+        if (props.products[key].length !== 0) {
+        shoppingList.push(
+            <div>
                 <h1>{key}</h1>
-               <ul>
-            {value.map((product) =>
-                <li
-
-                    id={value.indexOf(product)}
-                    key={product}
-                    onClick={handleDeleteClickFruit}
-                    >
-                    {product}
-                </li>)}
-        </ul>
+                <ul>{value.map((product) =>
+                    <li
+                        id={value.indexOf(product)}
+                        key={product}
+                        name={product}
+                        onClick={handleDeleteClickProduct}>
+                        {product}
+                    </li>)}
+                </ul>
             </div>)
-            :
-            trr = []
-        }
-    return (<div>
-        {shoppingList}
-    </div>
-    )
+    }
 }
+    
+return (<div>
+    {shoppingList}
+</div>
+)}
 
 const mapStateToProps = state => ({
     products: state.products
