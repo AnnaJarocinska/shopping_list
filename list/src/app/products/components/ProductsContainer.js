@@ -15,7 +15,8 @@ const ProductsCotainer = (props) => {
     for (let [key, value] of Object.entries(props.products)){
         if (props.products[key].length !== 0) {
         shoppingList.push(
-            <div>
+            <div
+            key={key}>
                 <h1>{key}</h1>
                 <ul>{value.map((product) =>
                     <li
