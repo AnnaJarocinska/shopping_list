@@ -8,7 +8,7 @@ const SendingList = (props) => {
     const { fruitList, vegetableList, dairyList, meatAndFishList, dryGoodsList, householdItemsList, othersList } = props.products;
 
     return (<Fragment>
-           <p>Sending list</p>
+           {/* <p>Sending list</p>
            
            <div>
                <p>Content of shopping list</p>
@@ -87,7 +87,7 @@ const SendingList = (props) => {
                     {product}
                 </li>)}
         </ul>
-           </div>
+           </div> */}
 
            <SendingEmail/>
            <Link to="/">Back to adding recipent</Link>

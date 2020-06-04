@@ -13,14 +13,15 @@ const ProductsCotainer = (props) => {
 
     const shoppingList = [];
     for (let [key, value] of Object.entries(props.products)){
-        if (props.products[key].length !== 0) {
+        console.log('value', value)
+        if (props.products[key].list.length !== 0) {
         shoppingList.push(
             <div 
             key={key}>
-                <h1>{key}</h1>
-                <ul>{value.map((product) =>
+                <h1>{value.name}</h1>
+                <ul>{value.list.map((product) =>
                     <li
-                        id={value.indexOf(product)}
+                        id={value.list.indexOf(product)}
                         key={product}
                         name={product}
                         onClick={handleDeleteClickProduct}>

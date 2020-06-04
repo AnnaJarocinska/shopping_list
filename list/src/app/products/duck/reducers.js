@@ -2,19 +2,25 @@ import types from './types';
 
 const INITIAL_STATE = {
 
-  fruitList: ['apples', 'bananas', 'lemon'],
+  fruitList: {
+    name: 'Fruits',
+    list: ['apples', 'bananas', 'lemon']
+  },
 
-  vegetableList:['carrot', 'tomato'],
+  vegetableList: {
+    name: 'Vegetables',
+    list: ['carrot', 'tomato']
+  },
 
-  dairyList: ['milk', 'eggs'],
+  // dairyList: ['milk', 'eggs'],
 
-  meatAndFishList: ['chicken', 'sausages'],
+  // meatAndFishList: ['chicken', 'sausages'],
 
-  dryGoodsList: ['flour', 'rice'],
+  // dryGoodsList: ['flour', 'rice'],
 
-  householdItemsList: ['paper'],
+  // householdItemsList: ['paper'],
 
-  othersList: ['ketchup', 'juice', 'cookies'],
+  // othersList: ['ketchup', 'juice', 'cookies'],
   
 }
 
