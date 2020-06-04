@@ -4,10 +4,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const SendingEmail = (props) => {
-console.log('props', props)
+    console.log('props', props)
 
     const handleEmailButtonClick = (e) => {
-        
+
         e.preventDefault();
         const fruits = props.products.fruitList;
         const vegetables = props.products.vegetableList;
@@ -31,15 +31,15 @@ console.log('props', props)
                 householdItems: `HOUSEHOLD ITEMS: ${householdItems}`,
                 others: `OTHERS: ${others}`,
                 email: email,
-                message:`MESSAGE: ${message}`,
+                message: `MESSAGE: ${message}`,
             }
 
-        }).then((response,) => {
+        }).then((response, ) => {
             if (response.data.msg === 'success') {
                 console.log("Message Sent.");
                 toast.success(`Shopping list has been sent to ${email}`, {
                     position: toast.POSITION.TOP_CENTER
-                  });
+                });
                 // this.resetForm()
             } else if (response.data.msg === 'fail') {
                 console.log("Message failed to send.")
@@ -48,10 +48,11 @@ console.log('props', props)
     }
 
     return (
-       <Fragment>
+        <Fragment>
             <button type='submit' onClick={handleEmailButtonClick}> send </button>
         </Fragment>
-    )}
+    )
+}
 
 const mapStateToProps = state => ({
     products: state.products,

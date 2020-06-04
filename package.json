@@ -1,0 +1,27 @@
+{
+  "name": "shopping_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaJarocinska/shopping_list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaJarocinska/shopping_list/issues"
+  },
+  "homepage": "https://github.com/AnnaJarocinska/shopping_list#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "formik": "^2.1.4",
+    "nodemailer": "^6.4.8",
+    "react-toastify": "^6.0.5",
+    "restore": "^0.3.0"
+  }
+}
