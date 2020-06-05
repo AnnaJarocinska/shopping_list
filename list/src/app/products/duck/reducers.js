@@ -12,57 +12,50 @@ const INITIAL_STATE = {
     list: ['carrot', 'tomato']
   },
 
-  // dairyList: ['milk', 'eggs'],
+  // dairyList: {
+  //   name: 'Dairy',
+  //   list: ['milk', 'eggs']
+  // },
 
-  // meatAndFishList: ['chicken', 'sausages'],
+  // meatAndFishList: {
+  //   name: 'Meat and fish',
+  //   list: ['chicken', 'sausages']
+  // },
 
-  // dryGoodsList: ['flour', 'rice'],
+  // dryGoodsList: {
+  //   name: 'Dry goods',
+  //   list: ['flour', 'rice']
+  // },
 
-  // householdItemsList: ['paper'],
+  // householdItemsList: {
+  //   name: 'Household items',
+  //   list: ['paper']
+  // },
 
-  // othersList: ['ketchup', 'juice', 'cookies'],
-  
-}
+  // othersList: {
+  //   name: 'Others',
+  //   list: ['ketchup', 'juice', 'cookies']
+  // },
+  }
 
 const productsReducer = (state = INITIAL_STATE, action) => {
+  let category = action.itemCategory
+  console.log('action.itemCategory', category)
   switch (action.type) {
     case types.ADD_PRODUCT:
       return {
-        ...state,
-        fruitList: 
-          action.itemCategory === "fruit" ?
-            [...state.fruitList,
-            action.item] : [...state.fruitList],
+        ...state, 
+        fruitList:
+        action.itemCategory === "fruit" ?
+        {...state.fruitList,
+          list: [...state.fruitList.list, action.item]} :
+          {...state.fruitList},
 
-        vegetableList:
+          vegetableList:
           action.itemCategory === "vegetable" ?
-            [...state.vegetableList,
-            action.item] : [...state.vegetableList],
-
-        dairyList:
-          action.itemCategory === "dairy" ?
-            [...state.dairyList,
-            action.item] : [...state.dairyList],
-
-        meatAndFishList:
-          action.itemCategory === "meatandfish" ?
-            [...state.meatAndFishList,
-            action.item] : [...state.meatAndFishList],
-
-        dryGoodsList:
-          action.itemCategory === "drygoods" ?
-            [...state.dryGoodsList,
-            action.item] : [...state.dryGoodsList],
-
-        householdItemsList:
-          action.itemCategory === "householditems" ?
-            [...state.householdItemsList,
-            action.item] : [...state.householdItemsList],
-
-        othersList:
-          action.itemCategory === "others" ?
-            [...state.othersList,
-            action.item] : [...state.othersList],
+          {...state.vegetableList,
+            list: [...state.vegetableList.list, action.item]} :
+            {...state.vegetableList},
       }
 
     case types.RESET_PRODUCTS:
