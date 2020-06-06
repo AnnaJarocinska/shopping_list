@@ -40,6 +40,7 @@ class ProductsForm extends Component {
         event.preventDefault();
         this.props.add(this.state.inputValue, this.state.selectValue, this.state.isImportant);
         console.log('this.state.selectValue',this.state.selectValue)
+        console.log('this.state.inputValue',this.state.inputValue)
         this.setState({
             inputValue: "",
             selectValue: "-"
@@ -57,13 +58,13 @@ class ProductsForm extends Component {
             <label>Choose a category:</label>
             <select value={this.state.selectValue} onChange={this.handleSelectChange}>
                 <option value="-">-</option>
-                <option value="fruitList">fruit</option>
-                <option value="vegetableList">vegetable</option>
-                <option value="dairyList">dairy</option>
-                <option value="meatAndFishList">meat and fish</option>
-                <option value="dryGoodsList">dry goods</option>
-                <option value="householdItemsList">household items</option>
-                <option value="othersList">others</option>
+                <option value="Fruits">fruit</option>
+                <option value="Vegetables">vegetable</option>
+                <option value="Dairy">dairy</option>
+                <option value="Meat and fish">meat and fish</option>
+                <option value="Dry goods">dry goods</option>
+                <option value="Household items">household items</option>
+                <option value="Others">others</option>
             </select>
             <label>important</label>
             <input type="checkbox" onChange={this.handleCheckboxChange} />

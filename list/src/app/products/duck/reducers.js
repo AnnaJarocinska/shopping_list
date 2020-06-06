@@ -12,77 +12,109 @@ const INITIAL_STATE = {
     list: ['carrot', 'tomato']
   },
 
-  // dairyList: {
-  //   name: 'Dairy',
-  //   list: ['milk', 'eggs']
-  // },
+  dairyList: {
+    name: 'Dairy',
+    list: ['milk', 'eggs']
+  },
 
-  // meatAndFishList: {
-  //   name: 'Meat and fish',
-  //   list: ['chicken', 'sausages']
-  // },
+  meatAndFishList: {
+    name: 'Meat and fish',
+    list: ['chicken', 'sausages']
+  },
 
-  // dryGoodsList: {
-  //   name: 'Dry goods',
-  //   list: ['flour', 'rice']
-  // },
+  dryGoodsList: {
+    name: 'Dry goods',
+    list: ['flour', 'rice']
+  },
 
-  // householdItemsList: {
-  //   name: 'Household items',
-  //   list: ['paper']
-  // },
+  householdItemsList: {
+    name: 'Household items',
+    list: ['paper']
+  },
 
-  // othersList: {
-  //   name: 'Others',
-  //   list: ['ketchup', 'juice', 'cookies']
-  // },
-  }
+  othersList: {
+    name: 'Others',
+    list: ['ketchup', 'juice', 'cookies']
+  },
+}
 
 const productsReducer = (state = INITIAL_STATE, action) => {
-  let category = action.itemCategory
-  console.log('action.itemCategory', category)
+
   switch (action.type) {
     case types.ADD_PRODUCT:
-      return {
-        ...state, 
-        fruitList:
-        action.itemCategory === "fruit" ?
-        {...state.fruitList,
-          list: [...state.fruitList.list, action.item]} :
-          {...state.fruitList},
 
-          vegetableList:
-          action.itemCategory === "vegetable" ?
-          {...state.vegetableList,
-            list: [...state.vegetableList.list, action.item]} :
-            {...state.vegetableList},
+      Object.values(state).forEach(element =>
+        element.name === action.itemCategory
+          ?
+          element.list = [...element.list, action.item]
+          :
+          element.list = [...element.list]
+      )
+      return {
+        ...state,
+
+        // fruitList:
+        //   action.itemCategory === "fruit" ?
+        //     {
+        //       ...state.fruitList,
+        //       list: [...state.fruitList.list, action.item]
+        //     } :
+        //     { ...state.fruitList },
       }
 
     case types.RESET_PRODUCTS:
+
+      Object.values(state).forEach(element =>
+        element.list = [],
+      )
       return {
         ...state,
-        fruitList: [],
-        vegetableList: [],
-        dairyList: [],
-        meatAndFishList: [],
-        dryGoodsList: [],
-        householdItemsList: [],
-        othersList: [],
       }
 
     case types.DELETE_PRODUCT:
+
+      Object.values(state).forEach(element =>
+        
+        element.list.includes(action.item)
+          ?
+          console.log('ZAWIERAAAAAAAAAAAAAAAAAAAAAAAAAA')
+        //   element.list = [...element.list.splice(action.id, 1)]
+          :
+          element.list = [...element.list]
+      )
+
+      // for (let value of Object.values(state)) {
       
-      for (let list of Object.keys(state)) {
-        state[list].forEach(element => {
-          element.includes(action.item)
-          &&
-          state[list].splice(action.id, 1)
-        });
-      }
+      //  console.log('vvvvvvvvvvvalue',value.list)
+      
+      //   value.list.forEach(element => {
+      //     console.log('element', element)
+      //     console.log('acionnnnItem', action.item)
+      //     element === action.item
+
+        
+      //   })
+      // }
+          // element.list.includes(action.item)
+          //   &&
+          //   state[key].list.splice(action.id, 1)
+        // });
+      // }
       return {
         ...state,
       }
 
+      // for (let list of Object.keys(state)) {
+      //   state[list].forEach(element => {
+      //     element.includes(action.item)
+      //     &&
+      //     state[list].splice(action.id, 1)
+      //   });
+      // }
+      // return {
+      //   ...state,
+      // }
+        
     default:
       return state
   }
