@@ -1,4 +1,5 @@
 import types from './types';
+import produce from 'immer'
 
 const INITIAL_STATE = {
 
@@ -38,36 +39,27 @@ const INITIAL_STATE = {
   },
 }
 
-const productsReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case types.ADD_PRODUCT:
-      Object.values(state).forEach(element => element.name === action.itemCategory?
-          element.list = [...element.list, action.item] : element.list = [...element.list]
-      )
-      return {
-        ...state,
-      }
+const productsReducer = (state = INITIAL_STATE, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case types.ADD_PRODUCT:
+        Object.values(draft).forEach(element => element.name === action.itemCategory ?
+          element.list = [...element.list, action.item] : element.list = [...element.list])
+        break;
 
-    case types.RESET_PRODUCTS:
-      Object.values(state).forEach(element =>
-        element.list = [],
-      )
-      return {
-        ...state,
-      }
+      case types.RESET_PRODUCTS:
+        Object.values(draft).forEach(element => element.list = [])
+        break;
 
-    case types.DELETE_PRODUCT:
-      Object.values(state).forEach(element => element.list.includes(action.item)
+      case types.DELETE_PRODUCT:
+        Object.values(draft).forEach(element => element.list.includes(action.item)
           &&
-          {...element.list.splice(action.id, 1 )}
-      )
-      return {
-        ...state,
-      }
+          { ...element.list.splice(action.id, 1) })
+        break;
 
-    default:
-      return state
-  }
-}
+      default:
+        return draft
+    }
+  })
 
 export default productsReducer;

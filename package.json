@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "formik": "^2.1.4",
+    "immer": "^6.0.9",
     "nodemailer": "^6.4.8",
     "react-toastify": "^6.0.5",
     "restore": "^0.3.0"

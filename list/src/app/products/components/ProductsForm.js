@@ -35,12 +35,9 @@ class ProductsForm extends Component {
     errorsInForm = null
 
    
-
     addProduct = (event) => {
         event.preventDefault();
         this.props.add(this.state.inputValue, this.state.selectValue, this.state.isImportant);
-        console.log('this.state.selectValue',this.state.selectValue)
-        console.log('this.state.inputValue',this.state.inputValue)
         this.setState({
             inputValue: "",
             selectValue: "-"
