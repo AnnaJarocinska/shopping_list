@@ -7,13 +7,13 @@ const SendingEmail = (props) => {
 
     const handleEmailButtonClick = (e) => {
         e.preventDefault();
-        const fruits = props.products.fruitList;
-        const vegetables = props.products.vegetableList;
-        const dairy = props.products.dairyList;
-        const meatAndFish = props.products.meatAndFishList;
-        const dryGoods = props.products.dryGoodsList;
-        const householdItems = props.products.householdItemsList;
-        const others = props.products.othersList;
+        const fruits = props.products.fruitList.list;
+        const vegetables = props.products.vegetableList.list;
+        const dairy = props.products.dairyList.list;
+        const meatAndFish = props.products.meatAndFishList.list;
+        const dryGoods = props.products.dryGoodsList.list;
+        const householdItems = props.products.householdItemsList.list;
+        const others = props.products.othersList.list;
         const email = props.email.email;
         const message = props.email.message;
 

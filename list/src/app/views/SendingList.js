@@ -5,89 +5,29 @@ import SendingEmail from '../email/components/SendingEmail';
 
 const SendingList = (props) => {
 
-    const { fruitList, vegetableList, dairyList, meatAndFishList, dryGoodsList, householdItemsList, othersList } = props.products;
+    const shoppingList = [];
+    for (let [key, value] of Object.entries(props.products)){
+        if (props.products[key].list.length !== 0) {
+        shoppingList.push(
+            <div 
+            key={key}>
+                <p>{value.name}</p>
+                <ul>{value.list.map((product) =>
+                    <li
+                        id={value.list.indexOf(product)}
+                        key={product}
+                        name={product}
+                        >
+                        {product}
+                    </li>)}
+                </ul>
+            </div>)
+    }
+}
 
     return (<Fragment>
-           {/* <p>Sending list</p>
-           
-           <div>
-               <p>Content of shopping list</p>
-        <p>
-            {fruitList.length !== 0 ? 'fruits' : ''}
-        </p>
-        <ul>
-            {fruitList.map((product) =>
-                <li
-                    key={product}>
-                    {product}
-                </li>)}
-        </ul>
-
-        <p>
-            {vegetableList.length !== 0 ? 'vegetables' : ''}
-        </p>
-        <ul>
-            {vegetableList.map(product =>
-                <li key={product}
-                    >
-                    {product}
-                </li>)}
-        </ul>
-
-        <p>
-            {dairyList.length !== 0 ? 'dairy' : ''}
-        </p>
-        <ul>
-            {dairyList.map(product =>
-                <li key={product}
-                   >
-                    {product}
-                </li>)}
-        </ul>
-
-        <p>
-            {meatAndFishList.length !== 0 ? 'meat and fish' : ''}
-        </p>
-        <ul>
-            {meatAndFishList.map(product =>
-                <li key={product}
-                   >
-                    {product}
-                </li>)}
-        </ul>
-
-        <p>
-            {dryGoodsList.length !== 0 ? 'dry goods' : ''}
-        </p>
-        <ul>
-            {dryGoodsList.map(product =>
-                <li key={product}
-                    >
-                    {product}
-                </li>)}
-        </ul>
-
-        <p>
-            {householdItemsList.length !== 0 ? 'household items' : ''}
-        </p>
-        <ul>
-            {householdItemsList.map(product =>
-                <li key={product}
-                    >
-                    {product}
-                </li>)}
-        </ul>
-
-        <p>
-            {othersList.length !== 0 ? 'others' : ''}
-        </p>
-        <ul>
-            {othersList.map(product =>
-                <li key={product}>
-                    {product}
-                </li>)}
-        </ul>
-           </div> */}
+  <p>Sending list</p>
+  {shoppingList}
 
            <SendingEmail/>
            <Link to="/">Back to adding recipent</Link>
