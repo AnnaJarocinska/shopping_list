@@ -1,0 +1,9 @@
+{
+    "fruit.label": "Fruits",
+    "vegetable.label": "Vegetables",
+    "dairy.label": "Dairy",
+    "meatAndFish.label": "Meat and fish",
+    "dryGoods.label": "Dry goods",
+    "householdItems.label": "Household items",
+    "others.label": "Others"
+  }

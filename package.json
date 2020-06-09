@@ -20,8 +20,12 @@
   "dependencies": {
     "axios": "^0.19.2",
     "formik": "^2.1.4",
+    "i18next": "^19.4.5",
+    "i18next-browser-languagedetector": "^4.2.0",
+    "i18next-http-backend": "^1.0.15",
     "immer": "^6.0.9",
     "nodemailer": "^6.4.8",
+    "react-i18next": "^11.5.0",
     "react-toastify": "^6.0.5",
     "restore": "^0.3.0"
   }
