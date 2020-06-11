@@ -1,88 +1,79 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 import actions from '../duck/actions';
 import ErrorsInForm from './ErrorsInForm';
 
-class ProductsForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputValue: "",
-            selectValue: "-",
-            isImportant: false,
-        }}
-
-    handleSelectChange = (e) => {
-        this.setState({
-            selectValue: e.target.value
-        })}
-
-    handleInputChange = (e) => {
-        this.setState({
-            inputValue: e.target.value
-        })}
-
-    handleCheckboxChange = () => {
-        this.setState({
-            isImportant: !this.state.isImportant
-        })}
-
-    handleResetClick = () => {
-        this.props.reset();
+const ProductsForm = (props) => {
+    let [categorySelect, setCategorySelect] = useState("-");
+    let [productInput, setProductInput] = useState("");
+    let [isImportantCheckbox, setIsImportantCheckbox] = useState(false);
+ 
+    const handleCategorySelectChange = (e) => {
+        setCategorySelect(
+            categorySelect = e.target.value
+        )
     }
+    const handleProductInputChange = (e) => {
+        setProductInput(
+            productInput = e.target.value
+        )
+    }
+    const handleisImportantCheckboxChange = () => {
+        setIsImportantCheckbox(
+            isImportantCheckbox = !isImportantCheckbox
+        )
+    }
+    const handleResetClick = () => {
+        props.reset();
+    }
+    const errorsInForm = null
 
-    errorsInForm = null
-
-   
-    addProduct = (event) => {
+    const addProduct = (event) => {
         event.preventDefault();
-        this.props.add(this.state.inputValue, this.state.selectValue, this.state.isImportant);
-        this.setState({
-            inputValue: "",
-            selectValue: "-"
-        })
-        this.errorsInForm = <ErrorsInForm category = {this.state.selectValue}/>
+        props.add(productInput, categorySelect, isImportantCheckbox);
+        setCategorySelect(
+            categorySelect = "-"
+        )
+        setProductInput(
+            productInput = ""
+        )
+        this.errorsInForm = <ErrorsInForm category={categorySelect} />
     }
+    const { t, i18n } = useTranslation();
 
-
-    render() {
-        return (<>
-        
-        <form onSubmit={this.addProduct}>
-            <input value={this.state.inputValue} onChange={this.handleInputChange}></input>
-
-            <label>Choose a category:</label>
-            <select value={this.state.selectValue} onChange={this.handleSelectChange}>
+    return (<>
+        <form onSubmit={addProduct}>
+            <label>{t('productInput.label')}</label>
+            <input value={productInput} onChange={handleProductInputChange}></input>
+            <label>{t('categorySelect.label')}</label>
+            <select value={categorySelect} onChange={handleCategorySelectChange}>
                 <option value="-">-</option>
-                <option value="Fruits">fruit</option>
-                <option value="Vegetables">vegetable</option>
-                <option value="Dairy">dairy</option>
-                <option value="Meat and fish">meat and fish</option>
-                <option value="Dry goods">dry goods</option>
-                <option value="Household items">household items</option>
-                <option value="Others">others</option>
+                <option value="Fruits">{t('fruit.label')}</option>
+                <option value="Vegetables">{t('vegetable.label')}</option>
+                <option value="Dairy">{t('dairy.label')}</option>
+                <option value="Meat and fish">{t('meatAndFish.label')}</option>
+                <option value="Dry goods">{t('dryGoods.label')}</option>
+                <option value="Household items">{t('householdItems.label')}</option>
+                <option value="Others">{t('others.label')}</option>
             </select>
-            <label>important</label>
-            <input type="checkbox" onChange={this.handleCheckboxChange} />
-            <button type='submit'>Add product</button>
-
-            <button onClick={this.handleResetClick}> Reset all list </button> 
-            <Link to="/">Back</Link>
-            <Link to="/adding_recipent">Add recipent</Link>
+            <label>{t('important.label')}</label>
+            <input type="checkbox" onChange={handleisImportantCheckboxChange} />
+            <button type='submit'>{t('add.label')}</button>
+            <button onClick={handleResetClick}>{t('resetList.label')}</button>
+            <Link to="/">{t('back.label')}</Link>
+            <Link to="/adding_recipent">{t('addRecipent.label')}</Link>
         </form>
-     
-        {this.errorsInForm}
-        </>
-        )}
+        {errorsInForm}
+    </>
+    )
 }
-
 
 const mapDispatchToProps = dispatch => ({
     add: (product, category, importance) => dispatch(actions.add(product, category, importance)),
     reset: () => dispatch(actions.reset())
 })
-
 
 export default connect(null, mapDispatchToProps)(ProductsForm);
 

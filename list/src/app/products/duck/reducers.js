@@ -2,7 +2,7 @@ import types from './types';
 import produce from 'immer'
 
 const INITIAL_STATE = {
-
+  
   fruitList: {
     name: 'Fruits',
     list: ['apples', 'bananas', 'lemon']

@@ -5,5 +5,12 @@
     "meatAndFish.label": "Meat and fish",
     "dryGoods.label": "Dry goods",
     "householdItems.label": "Household items",
-    "others.label": "Others"
+    "others.label": "Others",
+    "productInput.label": "Enter product name:",
+    "categorySelect.label": "Choose a category:",
+    "important.label": "important",
+    "add.label": "Add product",
+    "resetList.label": "Reset all list",
+    "back.label": "Back",
+    "addRecipent.label": "Add recipent"
   }

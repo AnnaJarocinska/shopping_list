@@ -5,5 +5,12 @@
     "meatAndFish.label": "Mięso i ryba",
     "dryGoods.label": "Produkty suche",
     "householdItems.label": "Przedmioty gospodarstwa domowego",
-    "others.label": "Inne"
+    "others.label": "Inne",
+    "productInput.label": "Wpisz nazwę produktu:",
+    "categorySelect.label": "Wybierz kategorię:",
+    "important.label": "ważne",
+    "add.label": "Dodaj produkt",
+    "resetList.label": "Usuń całą listę",
+    "back.label": "Wstecz",
+    "addRecipent.label": "Dodaj odbiorcę"
   }
