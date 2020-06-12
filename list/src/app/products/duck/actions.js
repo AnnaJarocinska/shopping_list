@@ -11,8 +11,14 @@ const reset = item => ({
 const deleteProduct = (item, id) => ({
     type: types.DELETE_PRODUCT, item, id
 })
+
+const changeLang = (lang) => ({
+    type: types.CHANGE_LANG, lang
+})
+
 export default {
     add,
     reset,
-    deleteProduct
+    deleteProduct,
+    changeLang,
 }

@@ -6,12 +6,12 @@ import LanguageSelector from '../components/translation/LanguageSelector';
 const MakingList = () => {
     return (
         <Fragment>
-           <Suspense fallback={null}>
-        <p>Making list</p>
-        <LanguageSelector/>
-        <ProductsContainer />
-        <ProductsForm />
-        </Suspense>
+          <Suspense fallback={null}>
+            <p>Making list</p>
+            <LanguageSelector/>
+            <ProductsContainer />
+            <ProductsForm />
+          </Suspense>
         </Fragment>
       );
 }

@@ -1,19 +1,25 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { connect } from 'react-redux';
+import actions from '../../products/duck/actions';
 
-const LanguageSelector = () => {
+const LanguageSelector = (props) => {
   const { t, i18n } = useTranslation()
-
-  const changeLanguage = (event) => {
+  const changeLanguages = (event) => {
     i18n.changeLanguage(event.target.value)
+    props.changeLang(event.target.value)
   }
 
   return (
-    <div onChange={changeLanguage}>
+    <div onChange={changeLanguages}>
       <input type="radio" value="en" name="language" defaultChecked /> English
       <input type="radio" value="pl" name="language"/> Polski
     </div>
   )
 }
 
-export default LanguageSelector
+const mapDispatchToProps = dispatch => ({
+  changeLang:(lang) => dispatch(actions.changeLang(lang))
+})
+
+export default connect(null, mapDispatchToProps)(LanguageSelector);

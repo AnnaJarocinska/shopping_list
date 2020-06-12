@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
 import ErrorsInForm from './ErrorsInForm';
 
@@ -73,7 +73,7 @@ const ProductsForm = (props) => {
 const mapDispatchToProps = dispatch => ({
     add: (product, category, importance) => dispatch(actions.add(product, category, importance)),
     reset: () => dispatch(actions.reset())
-})
+  })
 
 export default connect(null, mapDispatchToProps)(ProductsForm);
 
