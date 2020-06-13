@@ -7,7 +7,15 @@ const LanguageSelector = (props) => {
   const { t, i18n } = useTranslation()
   const changeLanguages = (event) => {
     i18n.changeLanguage(event.target.value)
-    props.changeLang(event.target.value)
+    props.changeLang(
+    [t('fruit.label'),
+    t('vegetable.label'),
+    t('dairy.label'),
+    t('meatAndFish.label'),
+    t('dryGoods.label'),
+    t('householdItems.label'),
+    t('others.label')
+    ])
   }
 
   return (
