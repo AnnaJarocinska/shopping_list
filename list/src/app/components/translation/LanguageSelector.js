@@ -9,7 +9,7 @@ const LanguageSelector = (props) => {
 
   const changeLanguages = (e) => {
   i18n.changeLanguage(e.target.value)
-  props.translate(e.target.value)
+  props.translate()
     }
     
   return (
@@ -21,7 +21,7 @@ const LanguageSelector = (props) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  translate: (lang) => dispatch(actions.translate(lang))
+  translate: () => dispatch(actions.translate())
 })
 
 export default connect(null, mapDispatchToProps)(LanguageSelector);

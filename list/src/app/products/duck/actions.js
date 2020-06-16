@@ -17,8 +17,7 @@ const translateNames = (names) => ({
     type: types.TRANSLATE_NAMES, names
 })
 
-const translate = (lang) =>  dispatch => {
-        if (lang === 'pl'){
+const translate = () =>  dispatch => {
             let names = [ 
             i18n.t('fruit.label'), 
             i18n.t('vegetable.label'),
@@ -29,7 +28,7 @@ const translate = (lang) =>  dispatch => {
             i18n.t('others.label'),
         ]
         dispatch(translateNames(names))
-} }
+} 
 
 export default {
     add,
