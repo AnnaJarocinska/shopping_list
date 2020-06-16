@@ -17,5 +17,7 @@
     "makingList.label": "Making list",
     "addingRecipent.label": "Adding recipent",
     "message.label": "Message:",
-    "send.label": "Send"
+    "send.label": "Send",
+    "resetForm.label": "Reset form",
+    "addRec.label": "Add recipient and message to the shopping list"
   }

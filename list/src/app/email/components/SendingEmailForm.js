@@ -1,10 +1,13 @@
 import React, { Fragment } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
 
 
+
 const SendingEmailForm = (props) => {
+    const { t } = useTranslation();
 
     const initialValues = {
         email: '',
@@ -36,11 +39,8 @@ const SendingEmailForm = (props) => {
         <Formik 
         initialValues={initialValues}
         validate={validate}
-        onSubmit={onSubmit}
-          render={({ handleChange, handleBlur, values, errors }) => (
-            
+        onSubmit={onSubmit}>      
             <Form>
-                
                 <label> Email:
                 <Field
                         type='text'
@@ -48,21 +48,18 @@ const SendingEmailForm = (props) => {
                         >
                     </Field>
                 </label>
-
                 <ErrorMessage name="email" />
                 <label>
-                Message:
+                {t('message.label')}
                 <Field as="textarea"
                     name='message'>
                 </Field>
                 </label>
-                <button type='submit' > Add recipient and message to the shopping list </button>
+                <button type='submit' >{t('addRec.label')}</button>
             </Form>
-            
-          )}>
         </Formik>
         <button 
-        onClick={handleResetButton}> Reset form</button>
+        onClick={handleResetButton}>{t('resetForm.label')}</button>
         </Fragment>
     );
 }

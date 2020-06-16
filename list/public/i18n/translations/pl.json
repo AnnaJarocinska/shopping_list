@@ -17,5 +17,7 @@
     "makingList.label": "Tworzenie listy",
     "addingRecipent.label": "Dodawanie odbiorcy",
     "message.label": "Wiadomość:",
-    "send.label": "Wyślij"
+    "send.label": "Wyślij",
+    "resetForm.label": "Wyczyść formularz",
+    "addRec.label": "Dodaj odbiorcę i wiadomość do listy zakupów"
   }
