@@ -9,7 +9,7 @@ const ProductsForm = (props) => {
     let [categorySelect, setCategorySelect] = useState("-");
     let [productInput, setProductInput] = useState("");
     let [isImportantCheckbox, setIsImportantCheckbox] = useState(false);
- 
+
     const handleCategorySelectChange = (e) => {
         setCategorySelect(
             categorySelect = e.target.value
@@ -73,7 +73,7 @@ const ProductsForm = (props) => {
 const mapDispatchToProps = dispatch => ({
     add: (product, category, importance) => dispatch(actions.add(product, category, importance)),
     reset: () => dispatch(actions.reset())
-  })
+})
 
 export default connect(null, mapDispatchToProps)(ProductsForm);
 
