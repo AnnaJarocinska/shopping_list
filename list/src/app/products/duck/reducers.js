@@ -4,7 +4,7 @@ import produce from 'immer';
 const INITIAL_STATE = {
 
   fruitList: {
-    name: 'Fruits',
+    name:'Fruits',
     list: ['apples', 'bananas', 'lemon']
   },
 
@@ -56,12 +56,12 @@ const productsReducer = (state = INITIAL_STATE, action) =>
           &&
           { ...element.list.splice(action.id, 1) })
         break;
-
-      case types.CHANGE_LANG:
-         for (let i = 0; i < action.lang.length; i++) {
-          Object.values(draft)[i].name = action.lang[i]
-         }
-        break;
+        
+      case types.TRANSLATE_NAMES:
+        for (let i = 0; i < action.names.length; i++) {
+         Object.values(draft)[i].name = action.names[i]
+        }
+       break;
 
       default:
         return draft

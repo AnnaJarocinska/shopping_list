@@ -10,7 +10,8 @@ i18n
         backend: {
             loadPath: '/i18n/{{ns}}/{{lng}}.json'
         },
-        fallbackLng: 'en',
+       
+        fallbackLng:['en', 'pl'],
         debug: true,
         ns: ['translations'],
         defaultNS: 'translations',
