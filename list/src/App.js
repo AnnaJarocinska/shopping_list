@@ -4,21 +4,23 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from 'styled-components'
 import Start from './app/views/Start';
 import MakingList from './app/views/MakingList';
 import AddingRecipent from './app/views/AddingRecipent';
 import SendingList from './app/views/SendingList';
 import Navigation from './app/components/Navigation';
 import LanguageSelector from './app/components/translation/LanguageSelector';
+import theme from '../src/app/utils/theme';
 
 toast.configure()
 
   function App() {
     return (
       <Suspense fallback={null}>
+        <ThemeProvider theme = {theme}>
       <div className="App">
         <Router>
             <Navigation/>
@@ -39,6 +41,7 @@ toast.configure()
             </Switch>
         </Router>
       </div>
+      </ThemeProvider>
       </Suspense>
     );
   }

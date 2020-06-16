@@ -1,10 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components'
 
+const Container = styled.div`
+display: flex;
+background-color: ${props => props.theme.colors.orange.normal};
+padding: ${({theme}) => theme.spacing.m}px;
+`
 
 const Navigation = () => {
     return (  
-        <nav>
+      <Container>
+        {/* <nav> */}
               <ul>
                 <li>
                   <Link to="/">Home</Link>
@@ -19,7 +26,8 @@ const Navigation = () => {
                   <Link to="/sending_list">Send list</Link>
                 </li>
               </ul>
-            </nav>
+            {/* </nav> */}
+            </Container>
     );
 }
  

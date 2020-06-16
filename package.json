@@ -28,6 +28,7 @@
     "react-i18next": "^11.5.0",
     "react-toastify": "^6.0.5",
     "redux-thunk": "^2.3.0",
-    "restore": "^0.3.0"
+    "restore": "^0.3.0",
+    "styled-components": "^5.1.1"
   }
 }
