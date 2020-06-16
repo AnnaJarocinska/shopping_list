@@ -11,6 +11,11 @@
     "important.label": "ważne",
     "add.label": "Dodaj produkt",
     "resetList.label": "Usuń całą listę",
-    "back.label": "Wstecz",
-    "addRecipent.label": "Dodaj odbiorcę"
+    "back.label": "Poprzedni krok",
+    "next.label": "Następny krok",
+    "addRecipent.label": "Dodaj odbiorcę",
+    "makingList.label": "Tworzenie listy",
+    "addingRecipent.label": "Dodawanie odbiorcy",
+    "message.label": "Wiadomość:",
+    "send.label": "Wyślij"
   }

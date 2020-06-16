@@ -41,7 +41,7 @@ const ProductsForm = (props) => {
         )
         this.errorsInForm = <ErrorsInForm category={categorySelect} />
     }
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     return (<>
         <form onSubmit={addProduct}>

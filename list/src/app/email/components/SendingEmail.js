@@ -2,9 +2,10 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 const SendingEmail = (props) => {
-
+    const { t } = useTranslation();
     const handleEmailButtonClick = (e) => {
         e.preventDefault();
         const fruits = props.products.fruitList.list;
@@ -44,7 +45,7 @@ const SendingEmail = (props) => {
 
     return (
         <Fragment>
-            <button type='submit' onClick={handleEmailButtonClick}> send </button>
+            <button type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</button>
         </Fragment>
     )
 }

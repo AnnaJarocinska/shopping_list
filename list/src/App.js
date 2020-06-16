@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,14 +12,17 @@ import MakingList from './app/views/MakingList';
 import AddingRecipent from './app/views/AddingRecipent';
 import SendingList from './app/views/SendingList';
 import Navigation from './app/components/Navigation';
+import LanguageSelector from './app/components/translation/LanguageSelector';
 
 toast.configure()
 
   function App() {
     return (
+      <Suspense fallback={null}>
       <div className="App">
         <Router>
             <Navigation/>
+            <LanguageSelector/>
             <Switch>
               <Route path="/making_list">
                 <MakingList />
@@ -36,6 +39,7 @@ toast.configure()
             </Switch>
         </Router>
       </div>
+      </Suspense>
     );
   }
 

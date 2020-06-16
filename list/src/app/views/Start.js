@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 const Start = () => {
     return (
         <Fragment>
-            <p>Start</p>
-            <Link to="/making_list">Make list</Link>
+            <Link to="/making_list">Start</Link>
         </Fragment>
     );
 }

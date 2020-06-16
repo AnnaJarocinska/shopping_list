@@ -1,17 +1,15 @@
-import React, {Fragment, Suspense} from 'react';
+import React, {Fragment} from 'react';
+import { useTranslation } from 'react-i18next';
 import ProductsContainer from '../products/components/ProductsContainer';
 import ProductsForm from '../products/components/ProductsForm';
-import LanguageSelector from '../components/translation/LanguageSelector';
 
 const MakingList = () => {
+  const { t } = useTranslation();
     return (
         <Fragment>
-          <Suspense fallback={null}>
-            <p>Making list</p>
-            <LanguageSelector/>
+            <p>{t('makingList.label')}</p>
             <ProductsContainer />
             <ProductsForm />
-          </Suspense>
         </Fragment>
       );
 }

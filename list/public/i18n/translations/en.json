@@ -11,6 +11,11 @@
     "important.label": "important",
     "add.label": "Add product",
     "resetList.label": "Reset all list",
-    "back.label": "Back",
-    "addRecipent.label": "Add recipent"
+    "back.label": "Previous step",
+    "next.label": "Next step",
+    "addRecipent.label": "Add recipent",
+    "makingList.label": "Making list",
+    "addingRecipent.label": "Adding recipent",
+    "message.label": "Message:",
+    "send.label": "Send"
   }

@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-// import '../../i18n'
+import { useTranslation } from 'react-i18next';
 import SendingEmail from '../email/components/SendingEmail';
 
-const SendingList = (props) => {
 
+const SendingList = (props) => {
+    const { t } = useTranslation();
     const shoppingList = [];
     for (let [key, value] of Object.entries(props.products)){
         if (props.products[key].list.length !== 0) {
@@ -27,10 +28,9 @@ const SendingList = (props) => {
 }
 
     return (<Fragment>
-                <p>Sending list</p>
                 {shoppingList}
                 <SendingEmail/>
-                <Link to="/">Back to adding recipent</Link>
+                <Link to="/">{t('back.label')}</Link>
             </Fragment>
     );
 }

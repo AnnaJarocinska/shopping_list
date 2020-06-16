@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { connect } from 'react-redux';
-// import SendingEmail from './SendingEmail';
 import actions from '../duck/actions';
 
 
@@ -31,7 +30,7 @@ const SendingEmailForm = (props) => {
     const handleResetButton = () => {
         props.reset();
     }
-
+    
     return (  
         <Fragment>
         <Formik 
@@ -52,7 +51,7 @@ const SendingEmailForm = (props) => {
 
                 <ErrorMessage name="email" />
                 <label>
-                    Message:
+                Message:
                 <Field as="textarea"
                     name='message'>
                 </Field>
@@ -64,7 +63,6 @@ const SendingEmailForm = (props) => {
         </Formik>
         <button 
         onClick={handleResetButton}> Reset form</button>
-        {/* <SendingEmail /> */}
         </Fragment>
     );
 }
