@@ -14,6 +14,7 @@ import SendingList from './app/views/SendingList';
 import Navigation from './app/components/Navigation';
 import LanguageSelector from './app/components/translation/LanguageSelector';
 import theme from '../src/app/utils/theme';
+import GlobalStyle from './index.css';
 
 toast.configure()
 
@@ -21,6 +22,7 @@ toast.configure()
     return (
       <Suspense fallback={null}>
         <ThemeProvider theme = {theme}>
+          <GlobalStyle/>
       <div className="App">
         <Router>
             <Navigation/>
