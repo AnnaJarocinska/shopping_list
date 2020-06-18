@@ -24,7 +24,7 @@ toast.configure()
         <ThemeProvider theme = {theme}>
           <GlobalStyle/>
             <Router>
-                <Navigation/>
+                {/* <Navigation/> */}
                 <LanguageSelector/>
                 <Switch>
                   <Route path="/making_list">

@@ -2,6 +2,9 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { connect } from 'react-redux';
 import actions from '../../products/duck/actions';
+import ChangeLangDiv from '../../components/ChangeLangDiv';
+import ChangeLangInput from '../../components/ChangeLangInput';
+import ChangeLangLabel from '../../components/ChangeLangLabel';
 
 const LanguageSelector = (props) => {
 
@@ -13,10 +16,28 @@ const LanguageSelector = (props) => {
     }
     
   return (
-    <div onChange={changeLanguages}>
-      <input type="radio" value="en" name="language" defaultChecked /> English
-      <input type="radio" value="pl" name="language" /> Polski
-    </div>
+    <ChangeLangDiv onChange={changeLanguages}>
+    
+      
+      {/* <ChangeLangLabel> */}
+        {/* <label> */}
+        {/* en */}
+        < ChangeLangInput type="radio" id="id1" value="en" name="language" defaultChecked/>
+        {/* </label> */}
+        <ChangeLangLabel for="id1"/>en
+     
+     
+      {/* <ChangeLangLabel> */}
+      {/* <label> */}
+        {/* pl */}
+        <ChangeLangInput type="radio" id="id2" value="pl" name="language"/> 
+        {/* </label> */}
+        {/* </ChangeLangLabel> */}
+        <ChangeLangLabel for="id2"/>pl
+      </ChangeLangDiv>
+    
+
+
   )
 }
 

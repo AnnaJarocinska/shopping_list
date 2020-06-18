@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Container = styled.div`
 display: flex;
-background-color: ${props => props.theme.colors.orange.normal};
+background-color: ${props => props.theme.colors.blue.normal};
 padding: ${({theme}) => theme.spacing.m}px;
 `
 

@@ -1,3 +1,4 @@
+
 export default {
     spacing: {
         s:5,
@@ -12,6 +13,7 @@ export default {
             light: 'rgb(135,206,250)',
             normal: 'rgb(100,149,237)',
             dark: 'rgb(70,130,180)',
+            basket: 'rgba(0,120,128, 0.4)',
         }
     }
 }

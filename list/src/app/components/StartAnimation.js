@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import bananas from '../images/bananas_S.png';
-import watermelon from '../images/watermelon_S.png';
+import salad from '../images/salad_S.png';
 import cherry from '../images/cherry_S.png';
-import basket from '../images/basketG_S.png';
+import basket from '../images/basket_S.png';
 import AnimationContainer from './StartAnimation.css';
 import ImgContainer from './ImgContainer.css';
 
@@ -23,7 +23,7 @@ const StartAnimation = () => {
             </ImgContainer>
             <ImgContainer>
               <motion.img
-                src={watermelon}
+                src={salad}
                 animate={{ y: [ -30, 0,] }}
                 transition={{
                     delay: 1,
