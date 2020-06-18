@@ -28,7 +28,7 @@ const ProductsForm = (props) => {
     const handleResetClick = () => {
         props.reset();
     }
-    const errorsInForm = null
+    let errorsInForm = null
 
     const addProduct = (event) => {
         event.preventDefault();
@@ -39,7 +39,7 @@ const ProductsForm = (props) => {
         setProductInput(
             productInput = ""
         )
-        this.errorsInForm = <ErrorsInForm category={categorySelect} />
+        errorsInForm = <ErrorsInForm category={categorySelect} />
     }
     const { t } = useTranslation();
 

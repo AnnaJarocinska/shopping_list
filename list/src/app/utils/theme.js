@@ -11,6 +11,7 @@ export default {
         blue: {
             light: 'rgb(135,206,250)',
             normal: 'rgb(100,149,237)',
+            dark: 'rgb(70,130,180)',
         }
     }
 }

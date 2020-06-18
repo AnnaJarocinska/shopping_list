@@ -23,26 +23,24 @@ toast.configure()
       <Suspense fallback={null}>
         <ThemeProvider theme = {theme}>
           <GlobalStyle/>
-      <div className="App">
-        <Router>
-            <Navigation/>
-            <LanguageSelector/>
-            <Switch>
-              <Route path="/making_list">
-                <MakingList />
-              </Route>
-              <Route path="/adding_recipent">
-                <AddingRecipent />
-              </Route>
-              <Route path="/sending_list">
-                <SendingList />
-              </Route>
-              <Route path="/">
-                <Start />
-              </Route>
-            </Switch>
-        </Router>
-      </div>
+            <Router>
+                <Navigation/>
+                <LanguageSelector/>
+                <Switch>
+                  <Route path="/making_list">
+                    <MakingList />
+                  </Route>
+                  <Route path="/adding_recipent">
+                    <AddingRecipent />
+                  </Route>
+                  <Route path="/sending_list">
+                    <SendingList />
+                  </Route>
+                  <Route path="/">
+                    <Start />
+                  </Route>
+                </Switch>
+            </Router>
       </ThemeProvider>
       </Suspense>
     );
