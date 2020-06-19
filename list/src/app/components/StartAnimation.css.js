@@ -4,7 +4,7 @@ const AnimationContainer = styled.div`
 display: flex;
 justify-content: space-between;
 width:70vw;
-margin:200px auto 10px auto;
+margin:70px auto 15px auto;
 `
 
 export default AnimationContainer;

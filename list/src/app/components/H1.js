@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const ChangeLangDiv = styled.div`
+const H1 = styled.h1`
 font-family: 'MuseoModerno', cursive;
-background-color: #fff;
 text-transform: uppercase;
-display:flex;
+color: #fff;
+font-size: 50px;
+margin-top:30px;
 `
-
-export default ChangeLangDiv;
+export default H1;
