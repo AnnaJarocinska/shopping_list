@@ -15,7 +15,7 @@ const LanguageSelector = (props) => {
     }
     
   return (
-    <FlexDiv>
+    <FlexDiv f_end>
         <ChangeLangDiv onChange={changeLanguages}>
           < ChangeLangInput type="radio" id="en" value="en" name="language" defaultChecked/>
           <ChangeLangLabel for="en">en</ChangeLangLabel>

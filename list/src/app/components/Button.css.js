@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.button`
 font-family: 'MuseoModerno', cursive;
+cursor:pointer;
 text-transform: uppercase;
 font-size:36px;  
 border: none;

@@ -7,6 +7,7 @@ ${normalize}
 body{
   background-image: url(${milkyWay});
   width:100%;
+  font-family: 'MuseoModerno', cursive;
 img{
   max-width:100%;
   height:auto;

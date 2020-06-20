@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
 import ErrorsInForm from './ErrorsInForm';
+import Form from '../../components/Form';
+import Label from '../../components/Label';
+import Input from '../../components/Input';
+import ButtonN from '../../components/ButtonN';
+import Select from '../../components/Select';
 
 const ProductsForm = (props) => {
     let [categorySelect, setCategorySelect] = useState("-");
@@ -44,11 +49,11 @@ const ProductsForm = (props) => {
     const { t } = useTranslation();
 
     return (<>
-        <form onSubmit={addProduct}>
-            <label>{t('productInput.label')}</label>
-            <input value={productInput} onChange={handleProductInputChange}></input>
-            <label>{t('categorySelect.label')}</label>
-            <select value={categorySelect} onChange={handleCategorySelectChange}>
+        <Form onSubmit={addProduct}>
+            <Label>{t('productInput.label')}</Label>
+            <Input value={productInput} onChange={handleProductInputChange}></Input>
+            <Label>{t('categorySelect.label')}</Label>
+            <Select value={categorySelect} onChange={handleCategorySelectChange}>
                 <option value="-">-</option>
                 <option value="Fruits">{t('fruit.label')}</option>
                 <option value="Vegetables">{t('vegetable.label')}</option>
@@ -57,14 +62,14 @@ const ProductsForm = (props) => {
                 <option value="Dry goods">{t('dryGoods.label')}</option>
                 <option value="Household items">{t('householdItems.label')}</option>
                 <option value="Others">{t('others.label')}</option>
-            </select>
-            <label>{t('important.label')}</label>
+            </Select>
+            <Label>{t('important.label')}</Label>
             <input type="checkbox" onChange={handleisImportantCheckboxChange} />
-            <button type='submit'>{t('add.label')}</button>
-            <button onClick={handleResetClick}>{t('resetList.label')}</button>
+            <ButtonN type='submit'>{t('add.label')}</ButtonN>
+            <ButtonN onClick={handleResetClick}>{t('resetList.label')}</ButtonN>
             <Link to="/">{t('back.label')}</Link>
             <Link to="/adding_recipent">{t('addRecipent.label')}</Link>
-        </form>
+        </Form>
         {errorsInForm}
     </>
     )
