@@ -3,6 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
+import Formm from '../../components/Formm';
+import Label from '../../components/Label';
+import Input from '../../components/Input';
+import ButtonN from '../../components/ButtonN';
+import FormContainer from '../../components/FormContainer';
 
 
 
@@ -36,30 +41,38 @@ const SendingEmailForm = (props) => {
     
     return (  
         <Fragment>
+            <FormContainer>
         <Formik 
         initialValues={initialValues}
         validate={validate}
         onSubmit={onSubmit}>      
-            <Form>
-                <label> Email:
-                <Field
+            <Formm>
+                <Label> Email: </Label>
+                    <Input
+                
                         type='text'
                         name='email'
                         >
-                    </Field>
-                </label>
+                    {/* </Field> */}
+                    </Input>
+               
                 <ErrorMessage name="email" />
-                <label>
+                <Label>
                 {t('message.label')}
-                <Field as="textarea"
-                    name='message'>
-                </Field>
-                </label>
-                <button type='submit' >{t('addRec.label')}</button>
-            </Form>
+                </Label>
+                {/* <Input */}
+                 <Field 
+                 as="textarea"
+                    name='message'
+                    rows = "7">
+                 </Field> 
+                {/* </Input> */}
+                
+                <ButtonN type='submit' >{t('addRec.label')}</ButtonN>
+                <ButtonN onClick={handleResetButton}>{t('resetForm.label')}</ButtonN>
+            </Formm>
         </Formik>
-        <button 
-        onClick={handleResetButton}>{t('resetForm.label')}</button>
+        </FormContainer>
         </Fragment>
     );
 }
