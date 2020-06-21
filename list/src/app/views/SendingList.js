@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import SendingEmail from '../email/components/SendingEmail';
+import Card from '../components/Card';
 
 
 const SendingList = (props) => {
@@ -28,7 +29,9 @@ const SendingList = (props) => {
 }
 
     return (<Fragment>
-                {shoppingList}
+                <Card>
+                    {shoppingList}
+                </Card>
                 <SendingEmail/>
                 <Link to="/">{t('back.label')}</Link>
             </Fragment>

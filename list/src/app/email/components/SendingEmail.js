@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+import Button from '../../components/Button.css';
 
 const SendingEmail = (props) => {
     const { t } = useTranslation();
@@ -45,7 +46,7 @@ const SendingEmail = (props) => {
 
     return (
         <Fragment>
-            <button type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</button>
+            <Button type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</Button>
         </Fragment>
     )
 }

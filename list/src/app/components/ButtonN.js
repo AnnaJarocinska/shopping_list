@@ -17,5 +17,6 @@ border-radius:5px;
 &:hover{
     background-color: rgb(173,255,47)
 }
+display: ${props => (props.buttonVisability? "none" : "")};
 `
 export default Button;

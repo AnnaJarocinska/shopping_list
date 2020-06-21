@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
@@ -8,10 +8,12 @@ import Label from '../../components/Label';
 import Input from '../../components/Input';
 import ButtonN from '../../components/ButtonN';
 import FormContainer from '../../components/FormContainer';
-
+import SendingEmail from './SendingEmail';
 
 
 const SendingEmailForm = (props) => {
+    let [sendingEmailVisability, setSendingEmailVisability] = useState(false);
+
     const { t } = useTranslation();
 
     const initialValues = {
@@ -20,7 +22,12 @@ const SendingEmailForm = (props) => {
     }
 
     const onSubmit = values => {
-        props.add(values.email, values.message)
+        props.add(values.email, values.message);
+        console.log('submitttttttttttttttttttttttttttttttttt')
+        setSendingEmailVisability(
+            sendingEmailVisability = !sendingEmailVisability
+        ); 
+
     }
 
     const validate = values => {
@@ -37,42 +44,40 @@ const SendingEmailForm = (props) => {
     }
     const handleResetButton = () => {
         props.reset();
+       
     }
-    
-    return (  
+
+    return (
         <Fragment>
-            <FormContainer>
-        <Formik 
-        initialValues={initialValues}
-        validate={validate}
-        onSubmit={onSubmit}>      
-            <Formm>
-                <Label> Email: </Label>
-                    <Input
-                
-                        type='text'
-                        name='email'
-                        >
-                    {/* </Field> */}
-                    </Input>
-               
-                <ErrorMessage name="email" />
-                <Label>
-                {t('message.label')}
-                </Label>
-                {/* <Input */}
-                 <Field 
-                 as="textarea"
-                    name='message'
-                    rows = "7">
-                 </Field> 
-                {/* </Input> */}
-                
-                <ButtonN type='submit' >{t('addRec.label')}</ButtonN>
-                <ButtonN onClick={handleResetButton}>{t('resetForm.label')}</ButtonN>
-            </Formm>
-        </Formik>
-        </FormContainer>
+            {props.visible &&
+                <FormContainer>
+                    <Formik
+                        initialValues={initialValues}
+                        validate={validate}
+                        onSubmit={onSubmit}>
+                        <Formm>
+                            <Label> Email: </Label>
+                            <Input
+                                type='text'
+                                name='email'
+                            >
+
+                            </Input>
+                            <ErrorMessage name="email" />
+                            <Label>
+                                {t('message.label')}
+                            </Label>
+                            <Field
+                                as="textarea"
+                                name='message'
+                                rows="7">
+                            </Field>
+                            <ButtonN onClick ={onSubmit} type='submit' >{t('addRec.label')}</ButtonN>
+                            <ButtonN onClick={handleResetButton}>{t('resetForm.label')}</ButtonN>
+                        </Formm>
+                    </Formik>
+                </FormContainer>}
+            {sendingEmailVisability && <SendingEmail />}
         </Fragment>
     );
 }
@@ -80,7 +85,7 @@ const SendingEmailForm = (props) => {
 const mapDispatchToProps = dispatch => ({
     add: (email, message) => dispatch(actions.add(email, message)),
     reset: () => dispatch(actions.reset())
-  
+
 })
- 
+
 export default connect(null, mapDispatchToProps)(SendingEmailForm)
