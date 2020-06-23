@@ -31,7 +31,6 @@ const MakingList = () => {
       <FlexDiv>
         <Steps>
           <Link to="/">{t('back.label')}</Link>
-          <Link to="/adding_recipent">{t('addRecipent.label')}</Link>
         </Steps>
         <Card>
           <TextContainer>
