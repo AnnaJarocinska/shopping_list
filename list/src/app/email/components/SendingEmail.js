@@ -46,7 +46,7 @@ const SendingEmail = (props) => {
 
     return (
         <Fragment>
-            <Button type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</Button>
+            <Button big type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</Button>
         </Fragment>
     )
 }

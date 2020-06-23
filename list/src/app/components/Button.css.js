@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const Button = styled.button`
-font-family: 'MuseoModerno', cursive;
 cursor:pointer;
 text-transform: uppercase;
-font-size:36px;  
 border: none;
+background-color: ${props => props.theme.colors.white.normal};
+${({big}) => big && css`
+font-size:36px;  
 padding: 10px 44px;
 position: relative;
 &::before {
@@ -23,7 +24,19 @@ position: relative;
         background: ${props => props.theme.colors.blue.basket};
         width: 100%;
     }
+}`}
+
+${({normal}) => normal && css`
+text-align: center;
+color:black;
+box-shadow: 5px 5px 8px;
+border-radius:5px;
+padding: 7px 20px;
+margin-top: 18px;
+&:hover{
+    background-color: ${props => props.theme.colors.blue.light};
 }
-`
+display: ${props => (props.buttonVisability? "none" : "")};`
+}`
 
 export default Button;

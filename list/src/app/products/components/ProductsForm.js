@@ -7,7 +7,7 @@ import ErrorsInForm from './ErrorsInForm';
 import Formm from '../../components/Formm';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
-import ButtonN from '../../components/ButtonN';
+import Button from '../../components/Button.css';
 import Select from '../../components/Select';
 import FormContainer from '../../components/FormContainer';
 
@@ -69,10 +69,8 @@ const ProductsForm = (props) => {
                 <Label>{t('important.label')}</Label>
                 <Input type="checkbox" onChange={handleisImportantCheckboxChange} />
             </div>
-            <ButtonN type='submit'>{t('add.label')}</ButtonN>
-            <ButtonN onClick={handleResetClick}>{t('resetList.label')}</ButtonN>
-            {/* <Link to="/">{t('back.label')}</Link>
-            <Link to="/adding_recipent">{t('addRecipent.label')}</Link> */}
+            <Button normal type='submit'>{t('add.label')}</Button>
+            <Button normal onClick={handleResetClick}>{t('resetList.label')}</Button>
         </Formm>
         </FormContainer>
         {errorsInForm}

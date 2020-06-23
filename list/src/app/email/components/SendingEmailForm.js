@@ -6,7 +6,7 @@ import actions from '../duck/actions';
 import Formm from '../../components/Formm';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
-import ButtonN from '../../components/ButtonN';
+import Button from '../../components/Button.css';
 import FormContainer from '../../components/FormContainer';
 import SendingEmail from './SendingEmail';
 
@@ -72,8 +72,8 @@ const SendingEmailForm = (props) => {
                                 name='message'
                                 rows="7">
                             </Field>
-                            <ButtonN onClick ={onSubmit} type='submit' >{t('addRec.label')}</ButtonN>
-                            <ButtonN onClick={handleResetButton}>{t('resetForm.label')}</ButtonN>
+                            <Button normal onClick ={onSubmit} type='submit' >{t('addRec.label')}</Button>
+                            <Button normal onClick={handleResetButton}>{t('resetForm.label')}</Button>
                         </Formm>
                     </Formik>
                 </FormContainer>}

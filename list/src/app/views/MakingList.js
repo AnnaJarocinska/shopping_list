@@ -10,7 +10,7 @@ import Steps from '../components/Steps';
 import SendingEmail from '../email/components/SendingEmail';
 import SendingEmailForm from '../email/components/SendingEmailForm';
 import Forms from '../components/Forms';
-import ButtonN from '../components/ButtonN';
+import Button from '../components/Button.css';
 
 const MakingList = () => {
   let [addingRecipentVisability, setAddingRecipentVisability] = useState(false);
@@ -40,10 +40,13 @@ const MakingList = () => {
         </Card>
         <Forms>
           <ProductsForm />
-          <ButtonN buttonVisability = {buttonVisability}
-          onClick = {changeAddingRecipentVisability}>Next</ButtonN>
+          <Button 
+          normal 
+          buttonVisability = {buttonVisability}
+          onClick = {changeAddingRecipentVisability}>
+            Next
+          </Button>
           <SendingEmailForm visible ={addingRecipentVisability}/>
-          
         </Forms>
       </FlexDiv>
     </Fragment>

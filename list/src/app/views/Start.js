@@ -13,7 +13,7 @@ const Start = () => {
             <H1>{t('appName.label')}</H1>
             <StartAnimation/>
             <Link to="/making_list">
-                <Button>Start</Button>
+                <Button big>Start</Button>
             </Link>
         </FlexContainer>
     );
