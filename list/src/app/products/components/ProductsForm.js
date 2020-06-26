@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
 import ErrorsInForm from './ErrorsInForm';

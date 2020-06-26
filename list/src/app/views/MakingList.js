@@ -7,7 +7,6 @@ import Card from '../components/Card';
 import TextContainer from '../components/TextContainer';
 import FlexDiv from '../components/FlexDiv';
 import Steps from '../components/Steps';
-import SendingEmail from '../email/components/SendingEmail';
 import SendingEmailForm from '../email/components/SendingEmailForm';
 import Forms from '../components/Forms';
 import Button from '../components/Button.css';
@@ -15,16 +14,16 @@ import Button from '../components/Button.css';
 const MakingList = () => {
   let [addingRecipentVisability, setAddingRecipentVisability] = useState(false);
   let [buttonVisability, setButtonVisability] = useState(false);
+
   const { t } = useTranslation();
 
   const changeAddingRecipentVisability = () => {  
     setAddingRecipentVisability(
     addingRecipentVisability = !addingRecipentVisability
-);   
- setButtonVisability(
-  buttonVisability = !buttonVisability
-)
-
+    )   
+    setButtonVisability(
+    buttonVisability = !buttonVisability
+    )
 }
   return (
     <Fragment>
