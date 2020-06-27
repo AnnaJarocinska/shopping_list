@@ -10,7 +10,6 @@ export default {
             normal: 'rgb(255,128,0)',
         },
         blue: {
-            light: 'rgb(173,255,47)',
             normal: 'rgb(100,149,237)',
             dark: 'rgb(70,130,180)',
             basket: 'rgba(0,120,128, 0.4)',
@@ -19,6 +18,12 @@ export default {
         },
         white: {
             normal: 'rgb(255,255,255)',
+        },
+        green: {
+            normal: 'rgb(173,255,47)',
+        },
+        yellow: {
+            normal: 'rgb(255,255,51)',
         },
     }
 }

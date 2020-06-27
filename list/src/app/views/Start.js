@@ -9,7 +9,7 @@ import H1 from '../components/H1';
 const Start = () => {
     const { t } = useTranslation();
     return (
-        <FlexContainer>
+        <FlexContainer center column>
             <H1>{t('appName.label')}</H1>
             <StartAnimation/>
             <Link to="/making_list">

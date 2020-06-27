@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
 import ErrorsInForm from './ErrorsInForm';
-import Formm from '../../components/Formm';
+import Form from '../../components/Form';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button.css';
 import Select from '../../components/Select';
-import FormContainer from '../../components/FormContainer';
 
 const ProductsForm = (props) => {
     let [categorySelect, setCategorySelect] = useState("-");
@@ -49,8 +48,7 @@ const ProductsForm = (props) => {
     const { t } = useTranslation();
 
     return (<>
-    <FormContainer>
-        <Formm onSubmit={addProduct}>
+        <Form onSubmit={addProduct}>
             <Label>{t('productInput.label')}</Label>
             <Input value={productInput} onChange={handleProductInputChange}></Input>
             <Label>{t('categorySelect.label')}</Label>
@@ -70,8 +68,7 @@ const ProductsForm = (props) => {
             </div>
             <Button normal type='submit'>{t('add.label')}</Button>
             <Button normal onClick={handleResetClick}>{t('resetList.label')}</Button>
-        </Formm>
-        </FormContainer>
+        </Form>
         {errorsInForm}
     </>
     )

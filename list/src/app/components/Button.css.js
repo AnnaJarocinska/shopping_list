@@ -5,6 +5,7 @@ cursor:pointer;
 text-transform: uppercase;
 border: none;
 background-color: ${props => props.theme.colors.white.normal};
+
 ${({big}) => big && css`
 font-size:36px;  
 padding: 10px 44px;
@@ -34,9 +35,18 @@ border-radius:5px;
 padding: 7px 20px;
 margin-top: 18px;
 &:hover{
-    background-color: ${props => props.theme.colors.blue.light};
+    background-color: ${props => props.theme.colors.blue.normal};
 }
-display: ${props => (props.buttonVisability? "none" : "")};`
+display: ${props => (props.buttonVisability? "none" : "")};
+`}
+
+${({next}) => next && css`
+background-color: ${props => props.theme.colors.green.normal};
+width: 80%;
+&:hover{
+    background-color: ${props => props.theme.colors.yellow.normal};
 }`
+}
+`
 
 export default Button;

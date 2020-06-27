@@ -5,11 +5,11 @@ import ProductsContainer from '../products/components/ProductsContainer';
 import ProductsForm from '../products/components/ProductsForm';
 import Card from '../components/Card';
 import TextContainer from '../components/TextContainer';
-import FlexDiv from '../components/FlexDiv';
 import Steps from '../components/Steps';
 import SendingEmailForm from '../email/components/SendingEmailForm';
-import Forms from '../components/Forms';
 import Button from '../components/Button.css';
+import FlexContainer from '../components/FlexContainer';
+import Form from '../components/Form';
 
 const MakingList = () => {
   let [addingRecipentVisability, setAddingRecipentVisability] = useState(false);
@@ -27,7 +27,7 @@ const MakingList = () => {
 }
   return (
     <Fragment>
-      <FlexDiv>
+      <FlexContainer>
         <Steps>
           <Link to="/">{t('back.label')}</Link>
         </Steps>
@@ -37,17 +37,18 @@ const MakingList = () => {
             <ProductsContainer />
           </TextContainer>
         </Card>
-        <Forms>
+        <FlexContainer column center>
           <ProductsForm />
-          <Button 
+          <Button
+          next
           normal 
           buttonVisability = {buttonVisability}
           onClick = {changeAddingRecipentVisability}>
-            Next
+            Next 
           </Button>
           <SendingEmailForm visible ={addingRecipentVisability}/>
-        </Forms>
-      </FlexDiv>
+        </FlexContainer>
+      </FlexContainer>
     </Fragment>
   );
 }

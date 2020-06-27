@@ -3,11 +3,10 @@ import { useFormik } from 'formik';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
-import Formm from '../../components/Formm';
+import Form from '../../components/Form';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button.css';
-import FormContainer from '../../components/FormContainer';
 import SendingEmail from './SendingEmail';
 
 
@@ -49,8 +48,7 @@ const SendingEmailForm = (props) => {
     return (
         <Fragment>
             {props.visible &&
-                <FormContainer> 
-                    <Formm onSubmit={formik.handleSubmit}>
+                    <Form onSubmit={formik.handleSubmit}>
                         <Label htmlFor='email'> Email: </Label>
                         <Input
                             id='email'
@@ -74,8 +72,7 @@ const SendingEmailForm = (props) => {
                         </Input>
                         <Button normal type='submit'> {t('addRec.label')}</Button>
                         <Button normal type='button' onClick={handleResetButton}> {t('resetForm.label')} </Button>
-                    </Formm>
-                </FormContainer>
+                    </Form>
             } 
             {sendingEmailVisability && <SendingEmail />} 
         </Fragment>

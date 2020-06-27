@@ -5,7 +5,7 @@ import actions from '../../products/duck/actions';
 import ChangeLangDiv from '../../components/ChangeLangDiv';
 import ChangeLangInput from '../../components/ChangeLangInput';
 import ChangeLangLabel from '../../components/ChangeLangLabel';
-import FlexDiv from '../../components/FlexDiv';
+import FlexContainer from '../../components/FlexContainer';
 
 const LanguageSelector = (props) => {
   const { i18n } = useTranslation(['en', 'pl']);
@@ -15,14 +15,14 @@ const LanguageSelector = (props) => {
     }
     
   return (
-    <FlexDiv f_end>
+    <FlexContainer f_end>
         <ChangeLangDiv onChange={changeLanguages}>
           < ChangeLangInput type="radio" id="en" value="en" name="language" defaultChecked/>
           <ChangeLangLabel for="en">en</ChangeLangLabel>
           <ChangeLangInput type="radio" id="pl" value="pl" name="language"/> 
           <ChangeLangLabel for="pl">pl</ChangeLangLabel>
         </ChangeLangDiv>
-      </FlexDiv>
+      </FlexContainer>
   )
 }
 
