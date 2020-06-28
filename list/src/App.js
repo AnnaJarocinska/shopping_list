@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'styled-components'
 import Start from './app/views/Start';
 import MakingList from './app/views/MakingList';
-import LanguageSelector from './app/components/translation/LanguageSelector';
+import LanguageSelector from './app/components/LanguageSelector';
 import theme from '../src/app/utils/theme';
 import GlobalStyle from './index.css';
 

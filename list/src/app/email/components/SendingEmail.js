@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-import Button from '../../components/Button.css';
+import Button from '../../styles/Button';
 
 const SendingEmail = (props) => {
     const { t } = useTranslation();

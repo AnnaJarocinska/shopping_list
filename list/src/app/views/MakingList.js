@@ -3,13 +3,11 @@ import { useTranslation } from 'react-i18next';
 import {Link} from 'react-router-dom';
 import ProductsContainer from '../products/components/ProductsContainer';
 import ProductsForm from '../products/components/ProductsForm';
-import Card from '../components/Card';
-import TextContainer from '../components/TextContainer';
-import Steps from '../components/Steps';
+import Card from '../styles/Card';
+import Steps from '../styles/Steps';
 import SendingEmailForm from '../email/components/SendingEmailForm';
-import Button from '../components/Button.css';
-import FlexContainer from '../components/FlexContainer';
-import Form from '../components/Form';
+import Button from '../styles/Button';
+import Container from '../styles/Container';
 
 const MakingList = () => {
   let [addingRecipentVisability, setAddingRecipentVisability] = useState(false);
@@ -27,17 +25,17 @@ const MakingList = () => {
 }
   return (
     <Fragment>
-      <FlexContainer>
+      <Container>
         <Steps>
           <Link to="/">{t('back.label')}</Link>
         </Steps>
         <Card>
-          <TextContainer>
+          <Container text>
             <p>{t('appName.label')}</p>
             <ProductsContainer />
-          </TextContainer>
+          </Container>
         </Card>
-        <FlexContainer column center>
+        <Container column center>
           <ProductsForm />
           <Button
           next
@@ -47,8 +45,8 @@ const MakingList = () => {
             Next 
           </Button>
           <SendingEmailForm visible ={addingRecipentVisability}/>
-        </FlexContainer>
-      </FlexContainer>
+        </Container>
+      </Container>
     </Fragment>
   );
 }

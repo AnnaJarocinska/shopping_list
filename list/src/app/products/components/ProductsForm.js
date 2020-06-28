@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
 import ErrorsInForm from './ErrorsInForm';
-import Form from '../../components/Form';
-import Label from '../../components/Label';
-import Input from '../../components/Input';
-import Button from '../../components/Button.css';
-import Select from '../../components/Select';
+import Form from '../../styles/Form';
+import Label from '../../styles/Label';
+import Input from '../../styles/Input';
+import Button from '../../styles/Button';
+import Select from '../../styles/Select';
 
 const ProductsForm = (props) => {
     let [categorySelect, setCategorySelect] = useState("-");
@@ -49,9 +49,9 @@ const ProductsForm = (props) => {
 
     return (<>
         <Form onSubmit={addProduct}>
-            <Label>{t('productInput.label')}</Label>
+            <Label form>{t('productInput.label')}</Label>
             <Input value={productInput} onChange={handleProductInputChange}></Input>
-            <Label>{t('categorySelect.label')}</Label>
+            <Label form>{t('categorySelect.label')}</Label>
             <Select value={categorySelect} onChange={handleCategorySelectChange}>
                 <option value="-">-</option>
                 <option value="Fruits">{t('fruit.label')}</option>
@@ -63,7 +63,7 @@ const ProductsForm = (props) => {
                 <option value="Others">{t('others.label')}</option>
             </Select>
             <div>
-                <Label>{t('important.label')}</Label>
+                <Label form>{t('important.label')}</Label>
                 <Input type="checkbox" onChange={handleisImportantCheckboxChange} />
             </div>
             <Button normal type='submit'>{t('add.label')}</Button>

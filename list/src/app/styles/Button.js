@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
 cursor:pointer;
@@ -6,7 +6,7 @@ text-transform: uppercase;
 border: none;
 background-color: ${props => props.theme.colors.white.normal};
 
-${({big}) => big && css`
+${({ big }) => big && css`
 font-size:36px;  
 padding: 10px 44px;
 position: relative;
@@ -27,7 +27,7 @@ position: relative;
     }
 }`}
 
-${({normal}) => normal && css`
+${({ normal }) => normal && css`
 text-align: center;
 color:black;
 box-shadow: 5px 5px 8px;
@@ -37,10 +37,10 @@ margin-top: 18px;
 &:hover{
     background-color: ${props => props.theme.colors.blue.normal};
 }
-display: ${props => (props.buttonVisability? "none" : "")};
+display: ${props => (props.buttonVisability ? "none" : "")};
 `}
 
-${({next}) => next && css`
+${({ next }) => next && css`
 background-color: ${props => props.theme.colors.green.normal};
 width: 80%;
 &:hover{

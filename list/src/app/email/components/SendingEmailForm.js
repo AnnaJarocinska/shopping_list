@@ -3,10 +3,10 @@ import { useFormik } from 'formik';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import actions from '../duck/actions';
-import Form from '../../components/Form';
-import Label from '../../components/Label';
-import Input from '../../components/Input';
-import Button from '../../components/Button.css';
+import Form from '../../styles/Form';
+import Label from '../../styles/Label';
+import Input from '../../styles/Input';
+import Button from '../../styles/Button';
 import SendingEmail from './SendingEmail';
 
 
@@ -49,7 +49,7 @@ const SendingEmailForm = (props) => {
         <Fragment>
             {props.visible &&
                     <Form onSubmit={formik.handleSubmit}>
-                        <Label htmlFor='email'> Email: </Label>
+                        <Label form htmlFor='email'> Email: </Label>
                         <Input
                             id='email'
                             name='email'
@@ -60,7 +60,7 @@ const SendingEmailForm = (props) => {
                         >
                         </Input>
                         {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
-                        <Label htmlFor='message'>{t('message.label')}</Label>
+                        <Label form htmlFor='message'>{t('message.label')}</Label>
                         <Input
                             as="textarea"
                             name='message'

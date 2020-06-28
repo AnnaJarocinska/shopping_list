@@ -4,13 +4,12 @@ import bananas from '../images/bananas_S.png';
 import salad from '../images/salad_S.png';
 import cherry from '../images/cherry_S.png';
 import basket from '../images/basket_S.png';
-import AnimationContainer from './StartAnimation.css';
-import ImgContainer from './ImgContainer.css';
+import Container from '../styles/Container';
 
 const StartAnimation = () => {
     return (
-        <AnimationContainer>
-            <ImgContainer>
+        <Container animation>
+            <Container img>
                 <motion.img
                 src={bananas}
                 animate={{ y: [ -30, 0,] }}
@@ -20,8 +19,8 @@ const StartAnimation = () => {
                     duration:1.5,
                     yoyo: Infinity
                 }}/>
-            </ImgContainer>
-            <ImgContainer>
+            </Container>
+            <Container img>
               <motion.img
                 src={salad}
                 animate={{ y: [ -30, 0,] }}
@@ -31,8 +30,8 @@ const StartAnimation = () => {
                     duration: 1.5,
                     yoyo: Infinity
                 }}/>
-            </ImgContainer>
-            <ImgContainer>
+            </Container>
+            <Container img>
                 <motion.img
                 src={cherry}
                 animate={{ y: [ -30, 0,] }}
@@ -42,8 +41,8 @@ const StartAnimation = () => {
                     duration:1.5,
                     yoyo: Infinity
                 }}/>  
-            </ImgContainer>
-            <ImgContainer>
+            </Container>
+            <Container img>
                 <motion.img
                 src={basket}
                 animate={{ y: [ -30, 0,] }}
@@ -52,8 +51,8 @@ const StartAnimation = () => {
                     duration:1.5,
                     yoyo: Infinity
                 }}/>    
-            </ImgContainer>    
-        </AnimationContainer>
+            </Container>    
+        </Container>
     );
 }
 
