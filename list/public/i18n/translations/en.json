@@ -21,6 +21,7 @@
     "send.label": "Send",
     "resetForm.label": "Reset form",
     "addRec.label": "Add recipient",
+    "changeRec.label": "Change recipient",
     "add.succes": "Added recipent: ",
     "addMessage.succes": "and message: "
   }

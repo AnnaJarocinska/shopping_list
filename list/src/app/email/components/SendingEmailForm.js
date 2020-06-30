@@ -12,9 +12,10 @@ import SendingEmail from './SendingEmail';
 
 
 const SendingEmailForm = (props) => {
-    let [sendingEmailVisability, setSendingEmailVisability] = useState(false);
-
     const { t } = useTranslation();
+
+    let [sendingEmailVisability, setSendingEmailVisability] = useState(false);
+    let [submitLabel, setSubmitLabel] = useState(t('addRec.label'));
 
     const validate = values => {
         let errors = {}
@@ -44,6 +45,9 @@ const SendingEmailForm = (props) => {
                 `, {
                     position: toast.POSITION.TOP_CENTER
                 });
+            setSubmitLabel(
+                submitLabel = t('changeRec.label'));
+
             }
     })
 
@@ -77,7 +81,7 @@ const SendingEmailForm = (props) => {
                             value={formik.values.message}
                         >
                         </Input>
-                        <Button normal type='submit'> {t('addRec.label')}</Button>
+                        <Button normal type='submit'> {submitLabel}</Button>
                         <Button normal type='button' onClick={handleResetButton}> {t('resetForm.label')} </Button>
                     </Form>
             } 
