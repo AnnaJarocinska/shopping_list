@@ -6,9 +6,6 @@ export default {
         l:20,
     }, 
     colors: {
-        orange: {
-            normal: 'rgb(255,128,0)',
-        },
         blue: {
             normal: 'rgb(100,149,237)',
             dark: 'rgb(70,130,180)',
@@ -18,6 +15,7 @@ export default {
         },
         white: {
             normal: 'rgb(255,255,255)',
+            transparent: 'rgba(255, 255, 255, 0.7)',
         },
         green: {
             normal: 'rgb(173,255,47)',

@@ -1,15 +1,16 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import {Link} from 'react-router-dom';
 import ProductsContainer from '../products/components/ProductsContainer';
 import ProductsForm from '../products/components/ProductsForm';
+import SendingEmailForm from '../email/components/SendingEmailForm';
 import Card from '../styles/Card';
 import Steps from '../styles/Steps';
-import SendingEmailForm from '../email/components/SendingEmailForm';
 import Button from '../styles/Button';
 import Container from '../styles/Container';
 
-const MakingList = () => {
+const MakingList = (props) => {
   let [addingRecipentVisability, setAddingRecipentVisability] = useState(false);
   let [buttonVisability, setButtonVisability] = useState(false);
 
@@ -23,11 +24,16 @@ const MakingList = () => {
     buttonVisability = !buttonVisability
     )
 }
+  const isNotEmpty = (element) => {
+    return element.list.length !== 0
+}
+  let listNotEmpty = Object.values(props.products).some(isNotEmpty);
+
   return (
     <Fragment>
       <Container>
         <Steps>
-          <Link to="/">{t('back.label')}</Link>
+          <Link to="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i></Link>
         </Steps>
         <Card>
           <Container text>
@@ -37,13 +43,13 @@ const MakingList = () => {
         </Card>
         <Container column center>
           <ProductsForm />
-          <Button
+          {listNotEmpty && <Button
           next
           normal 
           buttonVisability = {buttonVisability}
           onClick = {changeAddingRecipentVisability}>
             Next 
-          </Button>
+          </Button>}
           <SendingEmailForm visible ={addingRecipentVisability}/>
         </Container>
       </Container>
@@ -51,4 +57,8 @@ const MakingList = () => {
   );
 }
 
-export default MakingList;
+const mapStateToProps = state => ({
+  products: state.products
+})
+
+export default connect( mapStateToProps, null) (MakingList);

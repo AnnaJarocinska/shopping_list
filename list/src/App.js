@@ -11,7 +11,7 @@ import Start from './app/views/Start';
 import MakingList from './app/views/MakingList';
 import LanguageSelector from './app/components/LanguageSelector';
 import theme from '../src/app/utils/theme';
-import GlobalStyle from './index.css';
+import GlobalStyle from './app/styles/GlobalStyle';
 
 toast.configure()
 
