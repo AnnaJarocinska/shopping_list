@@ -20,5 +20,7 @@
     "message.label": "Wiadomość:",
     "send.label": "Wyślij",
     "resetForm.label": "Wyczyść formularz",
-    "addRec.label": "Dodaj odbiorcę"
+    "addRec.label": "Dodaj odbiorcę",
+    "add.succes": "Dodano odbiorcę: ",
+    "addMessage.succes": "oraz wiadomość: "
   }

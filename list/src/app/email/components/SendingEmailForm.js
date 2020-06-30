@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useFormik } from 'formik';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 import actions from '../duck/actions';
 import Form from '../../styles/Form';
 import Label from '../../styles/Label';
@@ -12,6 +13,8 @@ import SendingEmail from './SendingEmail';
 
 const SendingEmailForm = (props) => {
     let [sendingEmailVisability, setSendingEmailVisability] = useState(false);
+
+    const { t } = useTranslation();
 
     const validate = values => {
         let errors = {}
@@ -33,12 +36,16 @@ const SendingEmailForm = (props) => {
         onSubmit: (values, {resetForm}) => {
             props.add(values.email, values.message);
             resetForm();
+            console.log(values.message, 'values.message')
             setSendingEmailVisability(
                 sendingEmailVisability = !sendingEmailVisability);
+                toast.success(`${ t('add.succes')}${values.email} 
+                ${values.message && t('addMessage.succes')} ${values.message}
+                `, {
+                    position: toast.POSITION.TOP_CENTER
+                });
             }
     })
-
-    const { t } = useTranslation();
 
     const handleResetButton = () => {
         props.reset(); 
