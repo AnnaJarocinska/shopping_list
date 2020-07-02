@@ -23,5 +23,8 @@ export default {
         yellow: {
             normal: 'rgb(255,255,51)',
         },
+        black: {
+            blur: 'rgba(0, 0, 0, 0.5)',
+        }
     }
 }

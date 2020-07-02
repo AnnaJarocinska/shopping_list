@@ -33,7 +33,7 @@ const MakingList = (props) => {
     <Fragment>
       <Container>
         <Steps>
-          <Link to="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i></Link>
+          <Link to="/"><i class="fa fa-home" aria-hidden="true"></i></Link>
         </Steps>
         <Card>
           <Container text>

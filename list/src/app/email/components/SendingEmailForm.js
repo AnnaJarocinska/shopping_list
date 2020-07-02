@@ -40,7 +40,7 @@ const SendingEmailForm = (props) => {
             console.log(values.message, 'values.message')
             setSendingEmailVisability(
                 sendingEmailVisability = !sendingEmailVisability);
-                toast.success(`${ t('add.succes')}${values.email} 
+                toast.info(`${ t('add.succes')}${values.email} 
                 ${values.message && t('addMessage.succes')} ${values.message}
                 `, {
                     position: toast.POSITION.TOP_CENTER

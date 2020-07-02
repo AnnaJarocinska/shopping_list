@@ -45,8 +45,13 @@ background-color: ${props => props.theme.colors.green.normal};
 width: 80%;
 &:hover{
     background-color: ${props => props.theme.colors.yellow.normal};
-}`
-}
-`
+}`}
 
+${({ link }) => link && css`
+background-color: rgb(164,181,198);
+padding: 10px 20px;
+&:hover{
+    background-color: ${props => props.theme.colors.blue.basket};
+}`}
+`
 export default Button;

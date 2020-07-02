@@ -1,12 +1,17 @@
-import React, { Fragment } from 'react';
+import React, {useState }  from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+import {Link} from 'react-router-dom';
 import Button from '../../styles/Button';
+import Blur from '../../styles/Blur';
+import Notification from '../../styles/Notification';
 
 const SendingEmail = (props) => {
+    let [blurEffect, setBlurEffect] = useState(false);
+
     const { t } = useTranslation();
+
     const handleEmailButtonClick = (e) => {
         e.preventDefault();
         const fruits = props.products.fruitList.list;
@@ -36,18 +41,32 @@ const SendingEmail = (props) => {
         }).then((response, ) => {
             if (response.data.msg === 'success') {
                 console.log("Message Sent.");
-                toast.success(`Shopping list has been sent to ${email}`, {
-                    position: toast.POSITION.TOP_CENTER
-                });
+                
+                setBlurEffect(
+                    blurEffect = !blurEffect);
+
             } else if (response.data.msg === 'fail') {
                 console.log("Message failed to send.")
             }})
+        }
+    const blurOff = () => {
+        setBlurEffect(
+            blurEffect = !blurEffect);
     }
-
+        
     return (
-        <Fragment>
+        <div>
+            {blurEffect &&
+            <Blur>
+                <Notification>
+                    <p>Shopping list has been sent to <span>{props.email.email}</span></p>
+                    <Link to="/"> <Button link>Make new list </Button></Link>
+                    <Button link onClick = {blurOff}>Back to list</Button>
+                </Notification>
+            </Blur>
+            }
             <Button big type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</Button>
-        </Fragment>
+        </div>
     )
 }
 

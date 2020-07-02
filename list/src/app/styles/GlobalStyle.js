@@ -16,8 +16,12 @@ i{
   color: ${props => props.theme.colors.white.transparent};
   &:hover{
     color: ${props => props.theme.colors.white.normal};
-  }
+  }}
+p{
+  text-align: center;
 }
+span{
+  text-decoration: underline;
+}}
 `
-
 export default GlobalStyle;
