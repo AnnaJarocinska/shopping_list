@@ -46,7 +46,7 @@ const SendingEmail = (props) => {
                     blurEffect = !blurEffect);
 
             } else if (response.data.msg === 'fail') {
-                toast.warning(`${t('message.label')}`, {
+                toast.warning(`${t('fail')}`, {
                     position: toast.POSITION.TOP_CENTER
             })}})
         }

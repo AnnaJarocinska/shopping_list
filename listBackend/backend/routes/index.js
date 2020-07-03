@@ -24,8 +24,8 @@ transporter.verify((error, success) => {
 
 router.post('/send', (req, res) => {
 
-  const reg = new RegExp(/[A-Z]*\:\s$/)
-
+  const reg = new RegExp(/[A-Z]*\:\s$/);
+ 
   const fruits = reg.test(req.body.fruits.toString()) ? null : req.body.fruits;
   const vegetables = reg.test(req.body.vegetables.toString()) ? null : req.body.vegetables;
   const dairy = reg.test(req.body.dairy.toString()) ? null : req.body.dairy;
@@ -34,9 +34,10 @@ router.post('/send', (req, res) => {
   const householdItems = reg.test(req.body.householdItems.toString()) ? null : req.body.householdItems;
   const others = reg.test(req.body.others.toString()) ? null : req.body.others;
   const email = req.body.email;
-  const message = req.body.message;
+  const message = reg.test(req.body.message.toString()) ? null : req.body.message;
   const listName = req.body.listName;
 
+  console.log(req.body.message, 'req.body.message')
   function isNotNull(value) {
     return value !== null;
   }
