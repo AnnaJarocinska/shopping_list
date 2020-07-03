@@ -33,7 +33,7 @@ const MakingList = (props) => {
     <Fragment>
       <Container>
         <Steps>
-          <Link to="/"><i class="fa fa-home" aria-hidden="true"></i></Link>
+          <Link to="/"><i class="fa fa-globe" aria-hidden="true"></i></Link>
         </Steps>
         <Card>
           <Container text>
@@ -48,7 +48,7 @@ const MakingList = (props) => {
           normal 
           buttonVisability = {buttonVisability}
           onClick = {changeAddingRecipentVisability}>
-            Next 
+          {t('next.label')}
           </Button>}
           <SendingEmailForm visible ={addingRecipentVisability}/>
         </Container>

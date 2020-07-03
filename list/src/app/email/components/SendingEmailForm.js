@@ -14,16 +14,17 @@ import SendingEmail from './SendingEmail';
 const SendingEmailForm = (props) => {
     const { t } = useTranslation();
 
+    let brr = `${t('addRec.label')}`;
     let [sendingEmailVisability, setSendingEmailVisability] = useState(false);
-    let [submitLabel, setSubmitLabel] = useState(t('addRec.label'));
+    let [submitLabel, setSubmitLabel] = useState(brr);
 
     const validate = values => {
         let errors = {}
         if (!values.email) {
-            errors.email = 'This field is required'
+            errors.email = `${t('format.validate')}`
         }
         else if (!/^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i.test(values.email)) {
-            errors.email = 'Invalid format'
+            errors.email = `${t('require.validate')}`
         }
         return errors;
     }
@@ -36,18 +37,14 @@ const SendingEmailForm = (props) => {
         validate, 
         onSubmit: (values, {resetForm}) => {
             props.add(values.email, values.message);
-            resetForm();
-            console.log(values.message, 'values.message')
+            resetForm();         
             setSendingEmailVisability(
                 sendingEmailVisability = !sendingEmailVisability);
-                toast.info(`${ t('add.succes')}${values.email} 
-                ${values.message && t('addMessage.succes')} ${values.message}
-                `, {
-                    position: toast.POSITION.TOP_CENTER
-                });
+            toast.info(`${ t('add.succes')}${values.email} 
+                ${values.message && t('addMessage.succes')} ${values.message}`,
+                 {position: toast.POSITION.TOP_CENTER});
             setSubmitLabel(
                 submitLabel = t('changeRec.label'));
-
             }
     })
 
@@ -60,7 +57,7 @@ const SendingEmailForm = (props) => {
         <Fragment>
             {props.visible &&
                     <Form onSubmit={formik.handleSubmit}>
-                        <Label form htmlFor='email'> Email: </Label>
+                        <Label form htmlFor='email'>{t('email.label')}</Label>
                         <Input
                             id='email'
                             name='email'

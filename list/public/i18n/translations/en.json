@@ -14,14 +14,22 @@
     "resetList.label": "Reset all list",
     "back.label": "Previous step",
     "next.label": "Next step",
-    "addRecipent.label": "Add recipent",
+    "start.label": "Start",
     "makingList.label": "Making list",
     "addingRecipent.label": "Adding recipent",
     "message.label": "Message:",
-    "send.label": "Send",
+    "email.label": "Email:",
+    "send": "Send",
     "resetForm.label": "Reset form",
     "addRec.label": "Add recipient",
     "changeRec.label": "Change recipient",
     "add.succes": "Your list will be sent to: ",
-    "addMessage.succes": "with message: "
+    "addMessage.succes": "with message: ",
+    "sent": "Shopping list has been sent to ",
+    "new": "Make new list",
+    "back": "Back to list",
+    "fail": "Message failed to send",
+    "format.validate": "Invalid format",
+    "require.validate": "This field is required"
+
   }

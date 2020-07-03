@@ -13,7 +13,7 @@ const Start = () => {
             <Title>{t('appName.label')}</Title>
             <StartAnimation/>
             <Link to="/making_list">
-                <Button big>Start</Button>
+                <Button big>{t('start.label')}</Button>
             </Link>
         </Container>
     );

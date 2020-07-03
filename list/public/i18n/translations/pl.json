@@ -14,14 +14,23 @@
     "resetList.label": "Usuń całą listę",
     "back.label": "Poprzedni krok",
     "next.label": "Następny krok",
-    "addRecipent.label": "Dodaj odbiorcę",
+    "start.label": "Start",
     "makingList.label": "Tworzenie listy",
     "addingRecipent.label": "Dodawanie odbiorcy",
     "message.label": "Wiadomość:",
-    "send.label": "Wyślij",
+    "email.label": "Email:",
+    "send": "Wyślij",
     "resetForm.label": "Wyczyść formularz",
     "addRec.label": "Dodaj odbiorcę",
     "changeRec.label": "Zmień odbiorcę",
     "add.succes": "Twoja lista zakupów zostanie wysłana do: ",
-    "addMessage.succes": "z wiadomością: "
+    "addMessage.succes": "z wiadomością: ",
+    "sent": "Lista zakupów została wysłana do ",
+    "new": "Stwórz nową listę",
+    "back": "Powrót do listy",
+    "fail": "Nie udało się wysłać wiadomości",
+    "format.validate": "Niewłaściwy format",
+    "require.validate": "To pole jest wymagane"
+
+
   }

@@ -35,13 +35,14 @@ router.post('/send', (req, res) => {
   const others = reg.test(req.body.others.toString()) ? null : req.body.others;
   const email = req.body.email;
   const message = req.body.message;
+  const listName = req.body.listName;
 
   function isNotNull(value) {
     return value !== null;
   }
 
   const content = [
-    'SHOPPING LIST:',
+    listName,
     fruits,
     vegetables,
     dairy,

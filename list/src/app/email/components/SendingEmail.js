@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import {Link} from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Button from '../../styles/Button';
 import Blur from '../../styles/Blur';
 import Notification from '../../styles/Notification';
@@ -28,26 +29,26 @@ const SendingEmail = (props) => {
             method: "POST",
             url: "http://localhost:3001/send",
             data: {
-                fruits: `FRUITS: ${fruits}`,
-                vegetables: `VEGETABLES: ${vegetables}`,
-                dairy: `DAIRY: ${dairy}`,
-                meatAndFish: `MEAT AND FISH: ${meatAndFish}`,
-                dryGoods: `DRY GOODS: ${dryGoods}`,
-                householdItems: `HOUSEHOLD ITEMS: ${householdItems}`,
-                others: `OTHERS: ${others}`,
+                listName: `${t('appName.label')}`.toUpperCase(),
+                fruits: `${t('fruit.label')}: ${fruits}`,
+                vegetables: `${t('vegetable.label')}: ${vegetables}`,
+                dairy: `${t('dairy.label')}: ${dairy}`,
+                meatAndFish: `${t('meatAndFish.label')}: ${meatAndFish}`,
+                dryGoods: `${t('dryGoods.label')}: ${dryGoods}`,
+                householdItems: `${t('householdItems.label')}: ${householdItems}`,
+                others: `${t('others.label')}: ${others}`,
                 email: email,
-                message: `MESSAGE: ${message}`}
+                message: `${t('message.label')}: ${message}`}
 
         }).then((response, ) => {
             if (response.data.msg === 'success') {
-                console.log("Message Sent.");
-                
                 setBlurEffect(
                     blurEffect = !blurEffect);
 
             } else if (response.data.msg === 'fail') {
-                console.log("Message failed to send.")
-            }})
+                toast.warning(`${t('message.label')}`, {
+                    position: toast.POSITION.TOP_CENTER
+            })}})
         }
     const blurOff = () => {
         setBlurEffect(
@@ -59,13 +60,13 @@ const SendingEmail = (props) => {
             {blurEffect &&
             <Blur>
                 <Notification>
-                    <p>Shopping list has been sent to <span>{props.email.email}</span></p>
-                    <Link to="/"> <Button link>Make new list </Button></Link>
-                    <Button link onClick = {blurOff}>Back to list</Button>
+                    <p>{t('sent')} <span>{props.email.email}</span></p>
+                    <Link to="/"> <Button link>{t('new')}</Button></Link>
+                    <Button link onClick = {blurOff}>{t('back')}</Button>
                 </Notification>
             </Blur>
             }
-            <Button big type='submit' onClick={handleEmailButtonClick}>{t('send.label')}</Button>
+            <Button big type='submit' onClick={handleEmailButtonClick}>{t('send')}</Button>
         </div>
     )
 }
