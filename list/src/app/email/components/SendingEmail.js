@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import {Link} from 'react-router-dom';
 import { toast } from 'react-toastify';
+import actions from '../../products/duck/actions';
 import Button from '../../styles/Button';
 import Blur from '../../styles/Blur';
 import Notification from '../../styles/Notification';
@@ -54,6 +55,10 @@ const SendingEmail = (props) => {
         setBlurEffect(
             blurEffect = !blurEffect);
     }
+
+    const resetList = () => {
+        props.reset();
+    }
         
     return (
         <div>
@@ -61,7 +66,7 @@ const SendingEmail = (props) => {
             <Blur>
                 <Notification>
                     <p>{t('sent')} <span>{props.email.email}</span></p>
-                    <Link to="/"> <Button link>{t('new')}</Button></Link>
+                    <Link to="/"> <Button link onClick={resetList}>{t('new')}</Button></Link>
                     <Button link onClick = {blurOff}>{t('back')}</Button>
                 </Notification>
             </Blur>
@@ -76,4 +81,8 @@ const mapStateToProps = state => ({
     email: state.email
 })
 
-export default connect(mapStateToProps, null)(SendingEmail)
+const mapDispatchToProps = dispatch => ({
+    reset: () => dispatch(actions.reset())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SendingEmail)
