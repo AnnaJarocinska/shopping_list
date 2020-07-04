@@ -6,8 +6,12 @@ const GlobalStyle = createGlobalStyle`
 ${normalize}
 body{
   background-image: url(${milkyWay});
-  width:100%;
+  width: 100%;
+  max-height: 100vh;
   font-family: 'MuseoModerno', cursive;
+  @media (min-width: 768px) {
+    font-size: 1.5vw;
+   }
 img{
   max-width:100%;
   height:auto;

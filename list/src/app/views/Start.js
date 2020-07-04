@@ -9,7 +9,7 @@ import Title from '../styles/Title';
 const Start = () => {
     const { t } = useTranslation();
     return (
-        <Container center column>
+        <Container start>
             <Title>{t('appName.label')}</Title>
             <StartAnimation/>
             <Link to="/making_list">
