@@ -13,9 +13,8 @@ import SendingEmail from './SendingEmail';
 const SendingEmailForm = (props) => {
     const { t } = useTranslation();
 
-    let brr = `${t('addRec.label')}`;
     let [sendingEmailVisability, setSendingEmailVisability] = useState(false);
-    let [submitLabel, setSubmitLabel] = useState(brr);
+    let [submitLabel, setSubmitLabel] = useState(('addRec.label'));
 
     const validate = values => {
         let errors = {}
@@ -77,7 +76,7 @@ const SendingEmailForm = (props) => {
                             value={formik.values.message}
                         >
                         </Input>
-                        <Button normal type='submit'> {submitLabel}</Button>
+                        <Button normal type='submit'> {t(submitLabel)}</Button>
                         <Button normal type='button' onClick={handleResetButton}> {t('resetForm.label')} </Button>
                     </Form>
             } 
