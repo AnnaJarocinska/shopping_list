@@ -10,7 +10,10 @@ body{
   max-height: 100vh;
   font-family: 'MuseoModerno', cursive;
   @media (min-width: 768px) {
-    font-size: 1.5vw;
+    font-size: 2vw;
+   }
+   @media (min-width: 1025px) {
+    font-size: 1.4vw;
    }
 img{
   max-width:100%;

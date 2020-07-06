@@ -9,10 +9,12 @@ background-color: ${props => props.theme.colors.white.normal};
 ${({ big }) => big && css`
 font-size:9.5vw;  
 @media (min-width: 480px) {
-    font-size: 3.5vw;
+    font-size: 5vw;
+   }
+   @media (min-width: 1025px) {
+    font-size: 3vw;
    }
 padding: 10px 44px;
-margin-top: 15px;
 margin-bottom: 15px;
 position: relative;
 &::before {

@@ -10,6 +10,7 @@ ${({ start }) => start && css`
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
+min-height: 80vh;
 `}
 
 ${({ img }) => img && css`
@@ -27,7 +28,7 @@ padding: 10px 55px;
 
 ${({ animation }) => animation && css`
 justify-content: space-between;
-width:70vw;
+width:80vw;
 margin:2vw auto 2vw auto;
 flex-wrap: wrap;
 @media (min-width: 480px) {
