@@ -13,6 +13,23 @@ justify-content: space-around;
 min-height: 80vh;
 `}
 
+${({ list }) => list && css`
+flex-direction: column;
+@media (min-width: 590px) {
+  flex-direction: row;
+}
+`}
+
+${({ forms }) => forms && css`
+flex-direction: column;
+
+margin: 0 auto;
+order:-1;
+@media (min-width: 590px) {
+  order: 0;
+}
+`}
+
 ${({ img }) => img && css`
 display: inline-block;
 flex-basis:40%;
@@ -23,7 +40,10 @@ flex-basis:40%;
 
 ${({ text }) => text && css`
 display: block;
-padding: 10px 55px;
+padding: 8px 35px;
+@media (min-width: 1025px){
+  padding: 10px 55px;
+}
 `}
 
 ${({ animation }) => animation && css`

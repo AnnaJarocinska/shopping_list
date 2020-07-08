@@ -50,6 +50,7 @@ display: ${props => (props.buttonVisability ? "none" : "")};
 ${({ next }) => next && css`
 background-color: ${props => props.theme.colors.green.normal};
 width: 80%;
+margin: 3vh auto;
 &:hover{
     background-color: ${props => props.theme.colors.yellow.normal};
 }`}

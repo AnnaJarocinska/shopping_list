@@ -31,7 +31,7 @@ const MakingList = (props) => {
 
   return (
     <Fragment>
-      <Container>
+      <Container list>
         <Steps>
           <Link to="/"><i class="fa fa-globe" aria-hidden="true"></i></Link>
         </Steps>
@@ -41,7 +41,7 @@ const MakingList = (props) => {
             <ProductsContainer />
           </Container>
         </Card>
-        <Container column center>
+        <Container forms>
           <ProductsForm />
           {listNotEmpty && <Button
           next

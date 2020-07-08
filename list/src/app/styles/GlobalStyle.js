@@ -4,11 +4,14 @@ import milkyWay from '../images/milkyWay_L.jpg';
 
 const GlobalStyle = createGlobalStyle`
 ${normalize}
+html, body { overflow-y: auto; }
 body{
   background-image: url(${milkyWay});
-  width: 100%;
+  max-width: 100%;
   max-height: 100vh;
+  
   font-family: 'MuseoModerno', cursive;
+  margin: 0;
   @media (min-width: 768px) {
     font-size: 2vw;
    }
