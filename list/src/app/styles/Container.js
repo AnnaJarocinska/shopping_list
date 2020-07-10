@@ -2,8 +2,6 @@ import styled, {css} from 'styled-components';
 
 const Container = styled.div`
 display: flex;
-flex-direction: ${props => (props.column? "column" : "")};
-align-items: ${props => (props.center? "center" : "")};
 justify-content: ${props => (props.end? "flex-end" : "")};
 
 ${({ start }) => start && css`

@@ -9,7 +9,6 @@ body{
   background-image: url(${milkyWay});
   max-width: 100%;
   max-height: 100vh;
-  
   font-family: 'MuseoModerno', cursive;
   margin: 0;
   @media (min-width: 768px) {
