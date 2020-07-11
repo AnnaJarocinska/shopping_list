@@ -36,13 +36,13 @@ const ProductsForm = (props) => {
 
     const addProduct = (event) => {
         event.preventDefault();
-        props.add(productInput, categorySelect, isImportantCheckbox);
-        setCategorySelect(
-            categorySelect = "-"
-        )
-        setProductInput(
-            productInput = ""
-        )
+        isImportantCheckbox ?
+        props.add(productInput.toUpperCase(), categorySelect)
+        :
+        props.add(productInput, categorySelect);
+        setCategorySelect("-")
+        setProductInput("")
+        setIsImportantCheckbox(false)
         errorsInForm = <ErrorsInForm category={categorySelect} />
     }
     const { t } = useTranslation();
@@ -75,7 +75,7 @@ const ProductsForm = (props) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    add: (product, category, importance) => dispatch(actions.add(product, category, importance)),
+    add: (product, category) => dispatch(actions.add(product, category)),
     reset: () => dispatch(actions.reset())
 })
 

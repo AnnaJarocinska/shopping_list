@@ -2,7 +2,7 @@ import types from './types';
 import i18n from '../../../i18n';
 
 const add = (item, itemCategory, isImportant) => ({
-    type: types.ADD_PRODUCT, item,  itemCategory, isImportant
+    type: types.ADD_PRODUCT, item,  itemCategory
 })
 
 const reset = item => ({
