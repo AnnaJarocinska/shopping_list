@@ -64,7 +64,7 @@ const ProductsForm = (props) => {
             </Select>
             <div>
                 <Label form>{t('important.label')}</Label>
-                <Input type="checkbox" onChange={handleisImportantCheckboxChange} />
+                <Input type="checkbox" onChange={handleisImportantCheckboxChange} checked ={isImportantCheckbox} />
             </div>
             <Button normal type='submit'>{t('add.label')}</Button>
             <Button normal onClick={handleResetClick}>{t('resetList.label')}</Button>
