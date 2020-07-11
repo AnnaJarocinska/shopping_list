@@ -4,7 +4,6 @@ import milkyWay from '../images/milkyWay_L.jpg';
 
 const GlobalStyle = createGlobalStyle`
 ${normalize}
-html, body { overflow-y: auto; }
 body{
   background-image: url(${milkyWay});
   max-width: 100%;
