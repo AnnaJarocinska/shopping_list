@@ -31,5 +31,4 @@
     "fail": "Message failed to send",
     "format.validate": "Invalid format",
     "require.validate": "This field is required"
-
   }

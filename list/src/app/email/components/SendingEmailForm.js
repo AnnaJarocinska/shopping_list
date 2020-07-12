@@ -19,10 +19,10 @@ const SendingEmailForm = (props) => {
     const validate = values => {
         let errors = {}
         if (!values.email) {
-            errors.email = `${t('format.validate')}`
+            errors.email = `${t('require.validate')}`
         }
         else if (!/^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i.test(values.email)) {
-            errors.email = `${t('require.validate')}`
+            errors.email = `${t('format.validate')}`
         }
         return errors;
     }
