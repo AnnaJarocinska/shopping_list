@@ -32,9 +32,9 @@ const ProductsCotainer = (props) => {
     }
 }
     
-return (<div>
+return (<>
     {shoppingList}
-</div>
+</>
 )}
 
 const mapStateToProps = state => ({

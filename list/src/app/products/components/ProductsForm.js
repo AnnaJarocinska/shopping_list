@@ -58,22 +58,22 @@ const ProductsForm = (props) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
             >
-                    <option value="-">-</option>
-                    <option value="Fruits">{t('fruit.label')}</option>
-                    <option value="Vegetables">{t('vegetable.label')}</option>
-                    <option value="Dairy">{t('dairy.label')}</option>
-                    <option value="Meat and fish">{t('meatAndFish.label')}</option>
-                    <option value="Dry goods">{t('dryGoods.label')}</option>
-                    <option value="Household items">{t('householdItems.label')}</option>
-                    <option value="Cosmetics">{t('cosmetics.label')}</option>
-                    <option value="Baby items">{t('babyItems.label')}</option>
-                    <option value="Others">{t('others.label')}</option>
+                    <option value='-'>-</option>
+                    <option value='Fruits'>{t('fruit.label')}</option>
+                    <option value='Vegetables'>{t('vegetable.label')}</option>
+                    <option value='Dairy'>{t('dairy.label')}</option>
+                    <option value='Meat and fish'>{t('meatAndFish.label')}</option>
+                    <option value='Dry goods'>{t('dryGoods.label')}</option>
+                    <option value='Household items'>{t('householdItems.label')}</option>
+                    <option value='Cosmetics'>{t('cosmetics.label')}</option>
+                    <option value='Baby items'>{t('babyItems.label')}</option>
+                    <option value='Others'>{t('others.label')}</option>
             </Select>
             {formik.touched.category && formik.errors.category ? <div>{formik.errors.category}</div> : null}
             <div>
                 <Label form htmlFor='importance'>{t('important.label')}</Label>
                 <Input 
-                type="checkbox"
+                type='checkbox'
                 name='importance'
                 checked ={formik.values.importance}
                 onChange={formik.handleChange} 

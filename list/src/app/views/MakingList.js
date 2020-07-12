@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProductsContainer from '../products/components/ProductsContainer';
 import ProductsForm from '../products/components/ProductsForm';
 import SendingEmailForm from '../email/components/SendingEmailForm';

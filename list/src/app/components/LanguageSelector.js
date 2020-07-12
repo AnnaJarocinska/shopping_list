@@ -1,5 +1,5 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import actions from '../products/duck/actions';
 import Input from '../styles/Input';

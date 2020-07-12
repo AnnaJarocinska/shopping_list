@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import actions from '../duck/actions';
+import SendingEmail from './SendingEmail';
 import Form from '../../styles/Form';
 import Label from '../../styles/Label';
 import Input from '../../styles/Input';
 import Button from '../../styles/Button';
-import SendingEmail from './SendingEmail';
+
 
 const SendingEmailForm = (props) => {
     const { t } = useTranslation();

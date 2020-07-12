@@ -1,8 +1,8 @@
-import React, {useState }  from 'react';
+import React, { useState }  from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import actions from '../../products/duck/actions';
 import Button from '../../styles/Button';
