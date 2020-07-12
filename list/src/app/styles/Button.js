@@ -15,6 +15,7 @@ font-size:9.5vw;
     font-size: 3vw;
    }
 padding: 10px 44px;
+margin: auto;
 margin-bottom: 15px;
 position: relative;
 &::before {

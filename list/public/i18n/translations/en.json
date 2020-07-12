@@ -6,6 +6,8 @@
     "meatAndFish.label": "Meat and fish",
     "dryGoods.label": "Dry goods",
     "householdItems.label": "Household items",
+    "cosmetics.label": "Cosmetics",
+    "babyItems.label": "Baby items",
     "others.label": "Others",
     "productInput.label": "Enter product name:",
     "categorySelect.label": "Choose a category:",

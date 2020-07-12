@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
@@ -65,6 +65,8 @@ const ProductsForm = (props) => {
                     <option value="Meat and fish">{t('meatAndFish.label')}</option>
                     <option value="Dry goods">{t('dryGoods.label')}</option>
                     <option value="Household items">{t('householdItems.label')}</option>
+                    <option value="Cosmetics">{t('cosmetics.label')}</option>
+                    <option value="Baby items">{t('babyItems.label')}</option>
                     <option value="Others">{t('others.label')}</option>
             </Select>
             {formik.touched.category && formik.errors.category ? <div>{formik.errors.category}</div> : null}

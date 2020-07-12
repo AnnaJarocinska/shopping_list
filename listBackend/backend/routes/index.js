@@ -32,13 +32,14 @@ router.post('/send', (req, res) => {
   const meatAndFish = reg.test(req.body.meatAndFish.toString()) ? null : req.body.meatAndFish;
   const dryGoods = reg.test(req.body.dryGoods.toString()) ? null : req.body.dryGoods;
   const householdItems = reg.test(req.body.householdItems.toString()) ? null : req.body.householdItems;
+  const cosmetics = reg.test(req.body.cosmetics.toString()) ? null : req.body.cosmetics;
+  const babyItems = reg.test(req.body.babyItems.toString()) ? null : req.body.babyItems;
   const others = reg.test(req.body.others.toString()) ? null : req.body.others;
   const email = req.body.email;
   const message = reg.test(req.body.message.toString()) ? null : req.body.message;
   const listName = req.body.listName;
 
-  console.log(req.body.message, 'req.body.message')
-  function isNotNull(value) {
+  const isNotNull = (value) => {
     return value !== null;
   }
 
@@ -50,6 +51,8 @@ router.post('/send', (req, res) => {
     meatAndFish,
     dryGoods,
     householdItems,
+    cosmetics,
+    babyItems,
     others,
     '\r\n',
     message].filter(isNotNull)

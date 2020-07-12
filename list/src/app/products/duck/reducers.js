@@ -33,6 +33,16 @@ const INITIAL_STATE = {
     list: ['paper']
   },
 
+  cosmeticsList: {
+    name: 'Cosmetics',
+    list: ['jj']
+  },
+
+  babyItemsList: {
+    name: 'Baby items',
+    list: ['ppp']
+  },
+
   othersList: {
     name: 'Others',
     list: ['ketchup', 'juice', 'cookies']

@@ -8,6 +8,7 @@ import actions from '../../products/duck/actions';
 import Button from '../../styles/Button';
 import Blur from '../../styles/Blur';
 import Notification from '../../styles/Notification';
+import Container from '../../styles/Container';
 
 const SendingEmail = (props) => {
     let [blurEffect, setBlurEffect] = useState(false);
@@ -22,6 +23,8 @@ const SendingEmail = (props) => {
         const meatAndFish = props.products.meatAndFishList.list;
         const dryGoods = props.products.dryGoodsList.list;
         const householdItems = props.products.householdItemsList.list;
+        const cosmetics = props.products.cosmeticsList.list;
+        const babyItems = props.products.babyItemsList.list;
         const others = props.products.othersList.list;
         const email = props.email.email;
         const message = props.email.message;
@@ -37,9 +40,11 @@ const SendingEmail = (props) => {
                 meatAndFish: `${t('meatAndFish.label')}: ${meatAndFish}`,
                 dryGoods: `${t('dryGoods.label')}: ${dryGoods}`,
                 householdItems: `${t('householdItems.label')}: ${householdItems}`,
+                cosmetics: `${t('cosmetics.label')}: ${cosmetics}`,
+                babyItems: `${t('babyItems.label')}: ${babyItems}`,
                 others: `${t('others.label')}: ${others}`,
                 email: email,
-                message: `${t('message.label')}: ${message}`}
+                message: `${t('message.label')} ${message}`}
 
         }).then((response, ) => {
             if (response.data.msg === 'success') {
@@ -61,7 +66,7 @@ const SendingEmail = (props) => {
     }
         
     return (
-        <div>
+        <Container>
             {blurEffect &&
             <Blur>
                 <Notification>
@@ -72,7 +77,7 @@ const SendingEmail = (props) => {
             </Blur>
             }
             <Button big type='submit' onClick={handleEmailButtonClick}>{t('send')}</Button>
-        </div>
+        </Container>
     )
 }
 

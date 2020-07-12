@@ -28,59 +28,58 @@ const SendingEmailForm = (props) => {
     }
 
     const formik = useFormik({
-        initialValues : {
+        initialValues: {
             email: '',
             message: '',
         },
-        validate, 
-        onSubmit: (values, {resetForm}) => {
+        validate,
+        onSubmit: (values, { resetForm }) => {
             props.add(values.email, values.message);
-            resetForm();         
-            setSendingEmailVisability(
-                sendingEmailVisability = !sendingEmailVisability);
-            toast.info(`${ t('add.succes')}${values.email} 
+            resetForm();
+            setSendingEmailVisability(true);
+            toast.info(`${t('add.succes')}${values.email} 
                 ${values.message && t('addMessage.succes')} ${values.message}`,
-                 {position: toast.POSITION.TOP_CENTER});
+                { position: toast.POSITION.TOP_CENTER });
             setSubmitLabel(
                 submitLabel = t('changeRec.label'));
-            }
+        }
     })
 
     const handleResetButton = () => {
-        props.reset(); 
-        formik.resetForm();   
+        props.reset();
+        formik.resetForm();
     }
 
     return (
         <Fragment>
             {props.visible &&
-                    <Form onSubmit={formik.handleSubmit}>
-                        <Label form htmlFor='email'>{t('email.label')}</Label>
-                        <Input
-                            id='email'
-                            name='email'
-                            type='text'
-                            onChange={formik.handleChange}
-                            value={formik.values.email}
-                            onBlur={formik.handleBlur}
-                        >
-                        </Input>
-                        {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
-                        <Label form htmlFor='message'>{t('message.label')}</Label>
-                        <Input
-                            as="textarea"
-                            name='message'
-                            rows="7"
-                            id='message'
-                            onChange={formik.handleChange}
-                            value={formik.values.message}
-                        >
-                        </Input>
-                        <Button normal type='submit'> {t(submitLabel)}</Button>
-                        <Button normal type='button' onClick={handleResetButton}> {t('resetForm.label')} </Button>
-                    </Form>
-            } 
-            {sendingEmailVisability && <SendingEmail />} 
+                <Form onSubmit={formik.handleSubmit}>
+                    <Label form htmlFor='email'>{t('email.label')}</Label>
+                    <Input
+                        id='email'
+                        name='email'
+                        type='text'
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                        onBlur={formik.handleBlur}
+                    >
+                    </Input>
+                    {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                    <Label form htmlFor='message'>{t('message.label')}</Label>
+                    <Input
+                        as="textarea"
+                        name='message'
+                        rows="7"
+                        id='message'
+                        onChange={formik.handleChange}
+                        value={formik.values.message}
+                    >
+                    </Input>
+                    <Button normal type='submit'> {t(submitLabel)}</Button>
+                    <Button normal type='button' onClick={handleResetButton}> {t('resetForm.label')} </Button>
+                </Form>
+            }
+            {sendingEmailVisability && <SendingEmail />}
         </Fragment>
     );
 }
