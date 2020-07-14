@@ -7,8 +7,7 @@ let transporter = nodemailer.createTransport({
   service: "gmail",
   host: 'smtp.gmail.com',
   auth: {
-    // user: process.env.USER,
-    // pass: process.env.PASS
+    
     user: 'shoppinglist55555@gmail.com',
     pass: 'Ozekishoppinglist5'
   },
@@ -83,3 +82,5 @@ router.post('/send', (req, res) => {
 })
 
 module.exports = router;
+// user: process.env.USER,
+    // pass: process.env.PASS
