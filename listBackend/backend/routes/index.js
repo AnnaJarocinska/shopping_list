@@ -8,8 +8,10 @@ let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   auth: {
     type: "login",
-    user: process.env.USER,
-    pass: process.env.PASS
+    // user: process.env.USER,
+    // pass: process.env.PASS
+    user: 'shoppinglist55555@gmail.com',
+    pass: 'Ozekishoppinglist5'
   },
   secureConnection: 'false',
   tls: {
