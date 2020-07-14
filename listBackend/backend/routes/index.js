@@ -4,6 +4,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
+  service: "gmail",
   host: 'smtp.gmail.com',
   auth: {
     type: "login",
