@@ -2,21 +2,17 @@ require('dotenv').config()
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
 
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: false,
+const options = {
   auth: {
-    user: 'shoppinglist55555@gmail.com',
-    pass: ';mFfChBG:v38GK!d}VmR'
-  },
-  secureConnection: 'false',
-  tls: {
-    rejectUnauthorized: false,
+    api_user: process.env.USER,
+    api_key: process.env.PASS
   }
-});
+} 
+const transporter = nodemailer.createTransport(
+  sendgridTransport(options)
+)
 
 transporter.verify((error, success) => {
   if (error) {
@@ -27,9 +23,7 @@ transporter.verify((error, success) => {
 });
 
 router.post('/send', (req, res) => {
-
   const reg = new RegExp(/[A-Z]*\:\s$/);
- 
   const fruits = reg.test(req.body.fruits.toString()) ? null : req.body.fruits;
   const vegetables = reg.test(req.body.vegetables.toString()) ? null : req.body.vegetables;
   const dairy = reg.test(req.body.dairy.toString()) ? null : req.body.dairy;
@@ -69,7 +63,7 @@ router.post('/send', (req, res) => {
     text: content
   }
 
-  transporter.sendMail(mail, (err, data) => {
+  transporter.sendMail(mail, (err) => {
     if (err) {
       res.json({
         msg: 'fail'
@@ -83,5 +77,3 @@ router.post('/send', (req, res) => {
 })
 
 module.exports = router;
-// user: process.env.USER,
-    // pass: process.env.PASS

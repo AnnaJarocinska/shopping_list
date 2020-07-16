@@ -35,12 +35,12 @@ const INITIAL_STATE = {
 
   cosmeticsList: {
     name: 'Cosmetics',
-    list: ['jj']
+    list: []
   },
 
   babyItemsList: {
     name: 'Baby items',
-    list: ['ppp']
+    list: []
   },
 
   othersList: {
