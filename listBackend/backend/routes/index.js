@@ -9,7 +9,7 @@ const options = {
     api_user: process.env.USER,
     api_key: process.env.PASS
   }
-} 
+}
 const transporter = nodemailer.createTransport(
   sendgridTransport(options)
 )
@@ -57,7 +57,7 @@ router.post('/send', (req, res) => {
     .join("\r\n").toString()
 
   const mail = {
-    from: 'shoppinglist55555@gmail.com',
+    from: 'shopping-list@wp.pl',
     to: `${email}`,
     subject: 'Shopping list',
     text: content
