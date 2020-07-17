@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-frontend": "cd list && npm start",
-    "start-backend": "cd listBackend && cd backend && node backend",
+    "start-backend": "cd listBackend && cd backend && node ./bin/www",
     "start" : "concurrently \"npm run start-backend\" \"npm run start-frontend\""
   },
   "repository": {
