@@ -5,32 +5,32 @@ const INITIAL_STATE = {
 
   fruitList: {
     name:'Fruits',
-    list: ['apples', 'bananas', 'lemon']
+    list: []
   },
 
   vegetableList: {
     name: 'Vegetables',
-    list: ['carrot', 'tomato']
+    list: []
   },
 
   dairyList: {
     name: 'Dairy',
-    list: ['milk', 'eggs']
+    list: []
   },
 
   meatAndFishList: {
     name: 'Meat and fish',
-    list: ['chicken', 'sausages']
+    list: []
   },
 
   dryGoodsList: {
     name: 'Dry goods',
-    list: ['flour', 'rice']
+    list: []
   },
 
   householdItemsList: {
     name: 'Household items',
-    list: ['paper']
+    list: []
   },
 
   cosmeticsList: {
@@ -45,7 +45,7 @@ const INITIAL_STATE = {
 
   othersList: {
     name: 'Others',
-    list: ['ketchup', 'juice', 'cookies']
+    list: []
   },
 }
 
