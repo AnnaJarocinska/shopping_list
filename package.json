@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node listBackend/backend/./bin/www"
+    "start-frontend": "cd list && npm start",
+    "start-backend": "cd listBackend && cd backend && nodemon backend",
+    "start" : "concurrently \"npm run start-backend\" \"npm run start-frontend\""
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "homepage": "https://github.com/AnnaJarocinska/shopping_list#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "framer-motion": "^1.11.1",
