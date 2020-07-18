@@ -2,7 +2,8 @@ import styled, {css} from 'styled-components';
 
 const Label = styled.label`
 width:100%;
-margin: ${props => (props.form? "8px" : "")};
+margin: ${props => (props.form? "5px" : "")};
+margin-top: 0;
 
 ${({ lang }) => lang && css`
 display: block;

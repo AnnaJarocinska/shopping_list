@@ -20,7 +20,6 @@ flex-direction: column;
 
 ${({ forms }) => forms && css`
 flex-direction: column;
-
 margin: 0 auto;
 order:-1;
 @media (min-width: 590px) {

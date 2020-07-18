@@ -8,6 +8,7 @@ import Label from '../../styles/Label';
 import Input from '../../styles/Input';
 import Button from '../../styles/Button';
 import Select from '../../styles/Select';
+import ErrorInForm from '../../styles/ErrorInForm';
 
 const ProductsForm = (props) => {
     const { t } = useTranslation();
@@ -50,7 +51,7 @@ const ProductsForm = (props) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}>
             </Input>
-            {formik.touched.product && formik.errors.product ? <div>{formik.errors.product}</div> : null}
+            {formik.touched.product && formik.errors.product ? <ErrorInForm>{formik.errors.product}</ErrorInForm> : <ErrorInForm/>}
             <Label form htmlFor='category'>{t('categorySelect.label')}</Label>
             <Select 
                 value={formik.values.category}
@@ -69,7 +70,7 @@ const ProductsForm = (props) => {
                     <option value='Baby items'>{t('babyItems.label')}</option>
                     <option value='Others'>{t('others.label')}</option>
             </Select>
-            {formik.touched.category && formik.errors.category ? <div>{formik.errors.category}</div> : null}
+            {formik.touched.category && formik.errors.category ? <ErrorInForm> {formik.errors.category}</ErrorInForm> : <ErrorInForm second/>}
             <div>
                 <Label form htmlFor='importance'>{t('important.label')}</Label>
                 <Input 

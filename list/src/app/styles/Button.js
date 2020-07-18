@@ -41,7 +41,7 @@ color:black;
 box-shadow: 5px 5px 8px;
 border-radius:5px;
 padding: 7px 20px;
-margin-top: 18px;
+margin-top: 12px;
 &:hover{
     background-color: ${props => props.theme.colors.blue.normal};
 }

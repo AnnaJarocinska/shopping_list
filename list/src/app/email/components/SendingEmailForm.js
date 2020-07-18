@@ -9,7 +9,7 @@ import Form from '../../styles/Form';
 import Label from '../../styles/Label';
 import Input from '../../styles/Input';
 import Button from '../../styles/Button';
-
+import ErrorInForm from '../../styles/ErrorInForm';
 
 const SendingEmailForm = (props) => {
     const { t } = useTranslation();
@@ -65,7 +65,7 @@ const SendingEmailForm = (props) => {
                         onBlur={formik.handleBlur}
                     >
                     </Input>
-                    {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                    {formik.touched.email && formik.errors.email ? <ErrorInForm>{formik.errors.email}</ErrorInForm> : <ErrorInForm/>}
                     <Label form htmlFor='message'>{t('message.label')}</Label>
                     <Input
                         as="textarea"
