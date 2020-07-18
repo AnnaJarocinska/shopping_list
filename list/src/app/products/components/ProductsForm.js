@@ -31,6 +31,7 @@ const ProductsForm = (props) => {
         },
         validate, 
         onSubmit: (values, {resetForm}) => {
+            console.log(values.category, 'values.category')
             values.importance ?
             props.add(values.product.toUpperCase(), values.category)
             :
@@ -60,15 +61,15 @@ const ProductsForm = (props) => {
                 onBlur={formik.handleBlur}
             >
                     <option value='-'>-</option>
-                    <option value='Fruits'>{t('fruit.label')}</option>
-                    <option value='Vegetables'>{t('vegetable.label')}</option>
-                    <option value='Dairy'>{t('dairy.label')}</option>
-                    <option value='Meat and fish'>{t('meatAndFish.label')}</option>
-                    <option value='Dry goods'>{t('dryGoods.label')}</option>
-                    <option value='Household items'>{t('householdItems.label')}</option>
-                    <option value='Cosmetics'>{t('cosmetics.label')}</option>
-                    <option value='Baby items'>{t('babyItems.label')}</option>
-                    <option value='Others'>{t('others.label')}</option>
+                    <option value='fruits'>{t('fruit.label')}</option>
+                    <option value='vegetables'>{t('vegetable.label')}</option>
+                    <option value='dairy'>{t('dairy.label')}</option>
+                    <option value='meatAndFish'>{t('meatAndFish.label')}</option>
+                    <option value='dryGoods'>{t('dryGoods.label')}</option>
+                    <option value='householdItems'>{t('householdItems.label')}</option>
+                    <option value='cosmetics'>{t('cosmetics.label')}</option>
+                    <option value='babyItems'>{t('babyItems.label')}</option>
+                    <option value='others'>{t('others.label')}</option>
             </Select>
             {formik.touched.category && formik.errors.category ? <ErrorInForm> {formik.errors.category}</ErrorInForm> : <ErrorInForm second/>}
             <div>
