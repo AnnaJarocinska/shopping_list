@@ -31,7 +31,6 @@ const ProductsForm = (props) => {
         },
         validate, 
         onSubmit: (values, {resetForm}) => {
-            console.log(values.category, 'values.category')
             values.importance ?
             props.add(values.product.toUpperCase(), values.category)
             :
