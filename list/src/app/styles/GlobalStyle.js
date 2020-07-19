@@ -14,10 +14,13 @@ body{
   font-family: 'MuseoModerno', cursive;
   margin: 0;
   @media (min-width: 768px) {
-    font-size: 2vw;
+    font-size: 1.6vw;
    }
    @media (min-width: 1025px) {
     font-size: 1.4vw;
+   }
+   @media (min-width: 1366px) {
+    font-size: 1.2vw;
    }
 img{
   max-width:100%;

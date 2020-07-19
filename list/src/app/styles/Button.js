@@ -59,6 +59,7 @@ margin: 3vh auto;
 ${({ link }) => link && css`
 background-color: rgb(164,181,198);
 padding: 10px 20px;
+margin: 10px;
 &:hover{
     background-color: ${props => props.theme.colors.blue.basket};
 }`}

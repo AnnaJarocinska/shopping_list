@@ -57,6 +57,13 @@ ${({ lang }) => lang && css`
 text-transform: uppercase;
 background-color: ${props => props.theme.colors.white.normal};
 `}
+
+${({ links }) => links && css`
+flex-basis: 100%;
+justify-content: space-around;
+
+`}
 `
+
 export default Container;
 

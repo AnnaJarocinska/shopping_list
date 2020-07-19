@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 const Notification = styled.div`
 background-color:${props => props.theme.colors.white.normal};
-width: 400px;
-height:150px;
+min-width: 300px;
+@media (min-width: 480px) {
+    min-width: 450px;
+   }
+min-height:150px;
 position: absolute;
 z-index:20;
 top: 50%;
