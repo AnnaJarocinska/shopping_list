@@ -37,7 +37,7 @@ position: relative;
 
 ${({ normal }) => normal && css`
 text-align: center;
-color:black;
+color:${props => props.theme.colors.black.normal};
 box-shadow: 5px 5px 8px;
 border-radius:5px;
 padding: 7px 20px;
@@ -57,7 +57,7 @@ margin: 3vh auto;
 }`}
 
 ${({ link }) => link && css`
-background-color: rgb(164,181,198);
+background-color: ${props => props.theme.colors.grey.normal};
 padding: 10px 20px;
 margin: 10px;
 &:hover{

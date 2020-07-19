@@ -6,7 +6,7 @@ import ProductsContainer from '../products/components/ProductsContainer';
 import ProductsForm from '../products/components/ProductsForm';
 import SendingEmailForm from '../email/components/SendingEmailForm';
 import Card from '../styles/Card';
-import Steps from '../styles/Steps';
+import Icon from '../styles/Icon';
 import Button from '../styles/Button';
 import Container from '../styles/Container';
 
@@ -32,9 +32,9 @@ const MakingList = (props) => {
   return (
     <Fragment>
       <Container list>
-        <Steps>
+        <Icon>
           <Link to="/"><i class="fa fa-globe" aria-hidden="true"></i></Link>
-        </Steps>
+        </Icon>
         <Card>
           <Container text>
             <p>{t('appName.label')}</p>

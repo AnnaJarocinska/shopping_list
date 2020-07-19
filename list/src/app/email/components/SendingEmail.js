@@ -67,7 +67,7 @@ const SendingEmail = (props) => {
         
     return (
         <Container>
-            {/* {blurEffect && */}
+            {blurEffect &&
             <Blur>
                 <Notification>
                     <p>{t('sent')} <span>{props.email.email}</span></p>
@@ -77,7 +77,7 @@ const SendingEmail = (props) => {
                     </Container>
                 </Notification>
             </Blur>
-            {/* } */}
+            }
             <Button big type='submit' onClick={handleEmailButtonClick}>{t('send')}</Button>
         </Container>
     )
