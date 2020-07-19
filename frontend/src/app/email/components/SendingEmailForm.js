@@ -67,10 +67,9 @@ const SendingEmailForm = (props) => {
                     </Input>
                     {formik.touched.email && formik.errors.email ? <ErrorInForm>{formik.errors.email}</ErrorInForm> : <ErrorInForm/>}
                     <Label form htmlFor='message'>{t('message.label')}</Label>
-                    <Input
+                    <Input textarea
                         as="textarea"
                         name='message'
-                        rows="7"
                         id='message'
                         onChange={formik.handleChange}
                         value={formik.values.message}

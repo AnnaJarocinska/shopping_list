@@ -11,5 +11,9 @@ display:none;
     background: ${props => props.theme.colors.blue.basket};
   }`
 }
+${({ textarea }) => textarea && css`
+min-height:60px;
+`
+}
 `
 export default Input;
