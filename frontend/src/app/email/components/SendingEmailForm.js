@@ -10,6 +10,7 @@ import Label from '../../styles/Label';
 import Input from '../../styles/Input';
 import Button from '../../styles/Button';
 import ErrorInForm from '../../styles/ErrorInForm';
+import i18n from '../../../i18n';
 
 const SendingEmailForm = (props) => {
     const { t } = useTranslation();
@@ -46,6 +47,10 @@ const SendingEmailForm = (props) => {
         }
     })
 
+    const submitButton = props.email.email !== '' && i18n.language === 'pl' ?
+        <Button normal type='submit'> {t('changeRec.label')}</Button> :
+        <Button normal type='submit'> {t(submitLabel)}</Button>
+
     const handleResetButton = () => {
         props.reset();
         formik.resetForm();
@@ -65,7 +70,7 @@ const SendingEmailForm = (props) => {
                         onBlur={formik.handleBlur}
                     >
                     </Input>
-                    {formik.touched.email && formik.errors.email ? <ErrorInForm>{formik.errors.email}</ErrorInForm> : <ErrorInForm/>}
+                    {formik.touched.email && formik.errors.email ? <ErrorInForm>{formik.errors.email}</ErrorInForm> : <ErrorInForm />}
                     <Label form htmlFor='message'>{t('message.label')}</Label>
                     <Input textarea
                         as="textarea"
@@ -75,7 +80,7 @@ const SendingEmailForm = (props) => {
                         value={formik.values.message}
                     >
                     </Input>
-                    <Button normal type='submit'> {t(submitLabel)}</Button>
+                    {submitButton}
                     <Button normal type='button' onClick={handleResetButton}> {t('resetForm.label')} </Button>
                 </Form>
             }
@@ -83,10 +88,13 @@ const SendingEmailForm = (props) => {
         </Fragment>
     );
 }
+const mapStateToProps = state => ({
+    email: state.email
+})
 
 const mapDispatchToProps = dispatch => ({
     add: (email, message) => dispatch(actions.add(email, message)),
     reset: () => dispatch(actions.reset()),
 })
 
-export default connect(null, mapDispatchToProps)(SendingEmailForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SendingEmailForm);
