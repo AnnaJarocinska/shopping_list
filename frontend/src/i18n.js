@@ -12,7 +12,7 @@ i18n
         },
        
         fallbackLng:['en', 'pl'],
-        debug: true,
+        debug: false,
         ns: ['translations'],
         defaultNS: 'translations',
         keySeparator: false,
