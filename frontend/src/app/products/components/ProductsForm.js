@@ -44,7 +44,7 @@ const ProductsForm = (props) => {
     }
     return (<>
         <Form onSubmit={formik.handleSubmit}>
-            <Label form htmlFor='product'>{t('productInput.label')}</Label>
+            <Label form="true" htmlFor='product'>{t('productInput.label')}</Label>
             <Input
                 value={formik.values.product}
                 name='product' 
@@ -52,7 +52,7 @@ const ProductsForm = (props) => {
                 onBlur={formik.handleBlur}>
             </Input>
             {formik.touched.product && formik.errors.product ? <ErrorInForm>{formik.errors.product}</ErrorInForm> : <ErrorInForm/>}
-            <Label form htmlFor='category'>{t('categorySelect.label')}</Label>
+            <Label form="true" htmlFor='category'>{t('categorySelect.label')}</Label>
             <Select 
                 value={formik.values.category}
                 name='category' 
@@ -72,7 +72,7 @@ const ProductsForm = (props) => {
             </Select>
             {formik.touched.category && formik.errors.category ? <ErrorInForm> {formik.errors.category}</ErrorInForm> : <ErrorInForm second/>}
             <div>
-                <Label form htmlFor='importance'>{t('important.label')}</Label>
+                <Label form="true" htmlFor='importance'>{t('important.label')}</Label>
                 <Input 
                 type='checkbox'
                 name='importance'

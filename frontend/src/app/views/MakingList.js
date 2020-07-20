@@ -31,9 +31,9 @@ const MakingList = (props) => {
 
   return (
     <Fragment>
-      <Container list>
+      <Container list="true">
         <Icon>
-          <Link to="/"><i class="fa fa-globe" aria-hidden="true"></i></Link>
+          <Link to="/"><i className="fa fa-globe" aria-hidden="true"></i></Link>
         </Icon>
         <Card>
           <Container text>

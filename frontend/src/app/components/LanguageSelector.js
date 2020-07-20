@@ -14,12 +14,12 @@ const LanguageSelector = (props) => {
     }
     
   return (
-    <Container end>
-        <Container lang onChange={changeLanguages}>
-          <Input lang type="radio" id="en" value="en" name="language" defaultChecked/>
-          <Label lang for="en">en</Label>
-          <Input lang type="radio" id="pl" value="pl" name="language"/> 
-          <Label lang for="pl">pl</Label>
+    <Container end="true">
+        <Container lang="true" onChange={changeLanguages}>
+          <Input lang="true" type="radio" id="en" value="en" name="language" defaultChecked/>
+          <Label lang="true" htmlFor="en">en</Label>
+          <Input lang="true" type="radio" id="pl" value="pl" name="language"/> 
+          <Label lang="true" htmlFor="pl">pl</Label>
         </Container>
       </Container>
   )
