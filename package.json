@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/AnnaJarocinska/shopping_list#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": ">=0.21.1",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
@@ -28,7 +28,7 @@
     "i18next": "^19.4.5",
     "i18next-browser-languagedetector": "^4.2.0",
     "i18next-http-backend": "^1.0.15",
-    "immer": "^6.0.9",
+    "immer": ">=8.0.1",
     "nodemailer": "^6.4.8",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "react-i18next": "^11.5.0",
